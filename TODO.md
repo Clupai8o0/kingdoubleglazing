@@ -69,6 +69,5 @@ Single source of truth for all outstanding tasks. Keep this file updated — rem
 ## 🟢 Infrastructure / DX
 
 - [ ] **OG images** — generate per-page `opengraph-image.tsx` for key routes
-- [ ] **Mobile nav** — hamburger / drawer for `< lg` breakpoint (Header currently desktop-only)
 - [ ] **design-system.md** — fill real design tokens (currently a placeholder doc)
 - [ ] Add `licenseNumber` field to `data/site.ts` once obtained from Tas

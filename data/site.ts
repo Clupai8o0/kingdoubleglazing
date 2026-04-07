@@ -24,5 +24,11 @@ export const siteConfig = {
     facebook: '',
     instagram: '',
     google: ''
-  },
-} as const
+  },  logos: {
+    // light  = dark text/gold crown — use on light/white backgrounds (Header)
+    light: '/logo-light.png',
+    // dark   = all-gold crown + KING — use on dark/black backgrounds (Footer)
+    dark: '/logo-dark.png',
+    // icon   = crown mark only — use for favicons, small badges
+    icon: '/icon-small.png',
+  },} as const

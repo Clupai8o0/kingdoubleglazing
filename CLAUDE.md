@@ -13,6 +13,7 @@
 |---|---|
 | Stack, routes, file layout, data model, phases | `docs/architecture.md` |
 | **Business details (phone, email, address, social)** | **`data/site.ts` — single source of truth** |
+| **Logos & icons** | `public/logo-light.png` (light bg), `public/logo-dark.png` (dark bg), `public/icon-small.png` (crown mark). Paths also in `siteConfig.logos`. |
 | Component specs, variants, usage map | `docs/components.md` |
 | Keywords per page, schema, technical SEO, snippets | `docs/seo.md` |
 | GBP, citations, reviews, backlinks | `docs/local-seo.md` |

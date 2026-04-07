@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { footerNav } from '@/data/nav'
@@ -11,14 +12,15 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="bg-primary-container text-on-primary-fixed font-black text-lg px-2 py-0.5">
-                KDG
-              </span>
-              <span className="font-semibold text-inverse-on-surface text-sm leading-tight">
-                King Double<br />Glazing
-              </span>
-            </div>
+            <Link href="/" aria-label="King Double Glazing — home" className="inline-block mb-4">
+              <Image
+                src={siteConfig.logos.dark}
+                alt="King Double Glazing"
+                width={222}
+                height={87}
+                className="h-20 w-auto"
+              />
+            </Link>
             <p className="text-sm text-white/60 mb-4 leading-relaxed">
               Stop. Don&apos;t Overpay.<br />
               Melbourne&apos;s retrofit double glazing specialists.<br />

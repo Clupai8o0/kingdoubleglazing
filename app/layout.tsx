@@ -29,6 +29,11 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kingdoubleglazing.com.au"),
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/icon-small.png',
+    shortcut: '/icon-small.png',
+  },
   title: {
     default: "King Double Glazing Melbourne | From $495/m² | Stop. Don't Overpay.",
     template: "%s | King Double Glazing",

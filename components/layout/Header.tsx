@@ -1,7 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
-import { Phone } from 'lucide-react'
+import { Menu, Phone } from 'lucide-react'
 import { mainNav, servicesNav } from '@/data/nav'
 import { siteConfig } from '@/data/site'
 import { Button } from '@/components/ui/Button'
@@ -13,6 +14,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 
 export function Header() {
@@ -23,20 +32,21 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 shrink-0"
+            className="flex items-center shrink-0"
             aria-label="King Double Glazing — home"
           >
-            <span className="bg-inverse-surface text-primary-container font-black text-lg px-2 py-0.5">
-              KDG
-            </span>
-            <span className="font-headline font-semibold text-on-surface text-sm leading-tight hidden sm:block uppercase tracking-wide">
-              King Double<br />Glazing
-            </span>
+            <Image
+              src={siteConfig.logos.light}
+              alt="King Double Glazing"
+              width={160}
+              height={50}
+              priority
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Main nav — desktop */}
           <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1">
-            {/* Home */}
             <Link
               href="/"
               className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface/70 px-3 py-2 hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150"
@@ -86,7 +96,6 @@ export function Header() {
               </NavigationMenuList>
             </NavigationMenu>
 
-            {/* Remaining nav items */}
             {mainNav
               .filter(({ href }) => href !== '/')
               .map(({ label, href }) => (
@@ -100,7 +109,7 @@ export function Header() {
               ))}
           </nav>
 
-          {/* CTA */}
+          {/* CTA — desktop */}
           <div className="flex items-center gap-3 shrink-0">
             <Link
               href={siteConfig.phoneHref}
@@ -110,12 +119,100 @@ export function Header() {
               <Phone size={15} aria-hidden="true" />
               {siteConfig.phone}
             </Link>
-            <Button as="link" href="/instant-estimate/" size="sm">
+            <Button as="link" href="/instant-estimate/" size="sm" className="hidden sm:inline-flex">
               Get Quote
             </Button>
+
+            {/* Mobile hamburger */}
+            <Sheet>
+              <SheetTrigger
+                className="lg:hidden inline-flex items-center justify-center p-2 text-on-surface/70 hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-container"
+                aria-label="Open navigation menu"
+              >
+                <Menu size={22} aria-hidden="true" />
+              </SheetTrigger>
+
+              <SheetContent side="right">
+                <SheetTitle className="sr-only">Navigation</SheetTitle>
+                <SheetDescription>Site navigation menu</SheetDescription>
+
+                <div className="flex flex-col h-full overflow-y-auto pt-12 pb-8 px-6">
+                  {/* Logo */}
+                  <SheetClose asChild>
+                    <Link href="/" className="mb-8 inline-block" aria-label="King Double Glazing — home">
+                      <Image
+                        src={siteConfig.logos.dark}
+                        alt="King Double Glazing"
+                        width={120}
+                        height={47}
+                        className="h-10 w-auto"
+                      />
+                    </Link>
+                  </SheetClose>
+
+                  {/* Top-level nav links */}
+                  <nav aria-label="Mobile navigation">
+                    <ul className="space-y-1 mb-6">
+                      {mainNav.map(({ label, href }) => (
+                        <li key={href}>
+                          <SheetClose asChild>
+                            <Link
+                              href={href}
+                              className="font-headline text-base font-semibold uppercase tracking-wide text-inverse-on-surface/80 hover:text-primary-container px-3 py-2.5 block transition-colors duration-150"
+                            >
+                              {label}
+                            </Link>
+                          </SheetClose>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Services — grouped inline */}
+                    {servicesNav.map((group) => (
+                      <div key={group.heading} className="mb-5">
+                        <p className="font-headline text-xs font-semibold uppercase tracking-widest text-inverse-on-surface/30 px-3 mb-1">
+                          {group.heading}
+                        </p>
+                        <ul className="space-y-0.5">
+                          {group.items.map((item) => (
+                            <li key={item.href}>
+                              <SheetClose asChild>
+                                <Link
+                                  href={item.href}
+                                  className="font-headline text-sm font-semibold uppercase tracking-wide text-inverse-on-surface/70 hover:text-primary-container px-3 py-2 block transition-colors duration-150"
+                                >
+                                  {item.label}
+                                </Link>
+                              </SheetClose>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </nav>
+
+                  {/* Bottom CTAs */}
+                  <div className="mt-auto space-y-3 pt-6 border-t border-white/10">
+                    <a
+                      href={siteConfig.phoneHref}
+                      className="font-headline inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-inverse-on-surface/70 hover:text-primary-container transition-colors duration-150"
+                    >
+                      <Phone size={14} aria-hidden="true" />
+                      {siteConfig.phone}
+                    </a>
+                    <SheetClose asChild>
+                      <Button as="link" href="/instant-estimate/" size="sm" fullWidth>
+                        Get Quote
+                      </Button>
+                    </SheetClose>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
     </header>
   )
 }
+

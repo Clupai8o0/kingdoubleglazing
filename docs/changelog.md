@@ -4,6 +4,27 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-07 — Responsive mobile navigation (Sheet drawer)
+
+- Installed `@radix-ui/react-dialog`
+- Created `components/ui/sheet.tsx` — shadcn Sheet, KDG styled (black/gold, 0px radius)
+- Updated `Header.tsx` — hamburger button visible on `< lg`, opens right Sheet with: dark logo, top-level nav links, services grouped by category, phone + Get Quote CTAs
+- Desktop nav unchanged; `Get Quote` button hidden on mobile (available inside Sheet)
+- Removed "Mobile nav" from `TODO.md`
+
+---
+
+## 2026-04-07 — Real logos added to Header and Footer
+
+- Added `public/logo-light.png` (full logo, dark text — for light backgrounds), `public/logo-dark.png` (crown + KING gold — for dark backgrounds), `public/icon-small.png` (crown mark)
+- `Header` now uses `<Image src="/logo-light.png">` replacing the KDG text badge
+- `Footer` now uses `<Image src="/logo-dark.png">` replacing the KDG text badge
+- `data/site.ts` — added `logos` object (`light`, `dark`, `icon`) as single reference for all logo paths
+- `app/layout.tsx` — added `icons` metadata (favicon.ico, apple-touch-icon, shortcut using icon-small.png)
+- `CLAUDE.md` — documented logo convention in routing table
+
+---
+
 ## 2026-04-07 — TODO.md created as single source of truth for tasks
 
 - Scraped all `// TODO` comments + placeholder markers across all pages, components, and data files
