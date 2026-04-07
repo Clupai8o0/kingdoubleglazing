@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Phone } from 'lucide-react'
 import { mainNav, servicesNav } from '@/data/nav'
+import { siteConfig } from '@/data/site'
 import { Button } from '@/components/ui/Button'
 import {
   NavigationMenu,
@@ -14,11 +15,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 
-type HeaderProps = {
-  phone: string
-}
-
-export function Header({ phone }: HeaderProps) {
+export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-surface border-b border-surface-container-high">
       <div className="max-w-7xl mx-auto px-4">
@@ -106,12 +103,12 @@ export function Header({ phone }: HeaderProps) {
           {/* CTA */}
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              href={`tel:${phone.replace(/\s/g, '')}`}
+              href={siteConfig.phoneHref}
               className="hidden sm:inline-flex items-center gap-1.5 font-headline text-sm font-semibold uppercase tracking-wide text-on-surface/70 hover:text-on-surface transition-colors duration-150"
-              aria-label={`Call us: ${phone}`}
+              aria-label={`Call us: ${siteConfig.phone}`}
             >
               <Phone size={15} aria-hidden="true" />
-              {phone}
+              {siteConfig.phone}
             </Link>
             <Button as="link" href="/instant-estimate/" size="sm">
               Get Quote

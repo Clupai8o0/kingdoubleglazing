@@ -17,7 +17,6 @@ export default function CustomMirrorsPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Custom-cut mirrors for any room. Bathroom vanity, gym wall, feature mirror — any shape, any size, with bevelling available. Supplied and installed.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

@@ -39,7 +39,6 @@ export default function AreasPage() {
           </li>
         ))}
       </ul>
-      {/* TODO: Phase 10 — expand with all suburb data files */}
     </div>
   )
 }

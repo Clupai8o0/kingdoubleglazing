@@ -1,23 +1,27 @@
+import { siteConfig } from '@/data/site'
+
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://kingdoubleglazing.com.au/#business',
-  name: 'King Double Glazing',
-  alternateName: 'Brooklyn Glass Pty Ltd t/a King Double Glazing',
+  '@id': `${siteConfig.domain}/#business`,
+  name: siteConfig.name,
+  alternateName: siteConfig.legalName,
   description: "Melbourne's retrofit double glazing specialists. Stop. Don't Overpay. From $495/m².",
-  url: 'https://kingdoubleglazing.com.au',
-  // TODO: add real phone, email, address from Tas
-  telephone: '+61-3-XXXX-XXXX',
+  url: siteConfig.domain,
+  telephone: siteConfig.phoneTel,
+  email: siteConfig.email,
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Melbourne',
-    addressRegion: 'VIC',
-    addressCountry: 'AU',
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.suburb,
+    addressRegion: siteConfig.address.state,
+    postalCode: siteConfig.address.postcode,
+    addressCountry: siteConfig.address.country,
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -37.8136,
-    longitude: 144.9631,
+    latitude: siteConfig.geo.latitude,
+    longitude: siteConfig.geo.longitude,
   },
   areaServed: {
     '@type': 'State',
@@ -38,5 +42,5 @@ export const localBusinessSchema = {
       closes: '14:00',
     },
   ],
-  sameAs: [], // TODO: social links
+  sameAs: Object.values(siteConfig.social).filter(Boolean),
 } as const

@@ -47,7 +47,6 @@ export default async function SuburbPage({
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Retrofit double glazing for {data.name} ({data.postcode}) homes. Local Melbourne glazier with transparent pricing from $495/m².
       </p>
-      {/* TODO: Phase 10 — suburb-specific content from data/suburbs/{slug}.ts */}
     </div>
   )
 }

@@ -27,11 +27,6 @@ const barlow = Barlow({
   display: "swap",
 });
 
-// TODO: replace with real contact details from Tas
-const PHONE = "03 9XXX XXXX";
-const EMAIL = "info@kingdoubleglazing.com.au";
-const ADDRESS = "Melbourne, VIC, Australia";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://kingdoubleglazing.com.au"),
   title: {
@@ -64,15 +59,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
         <EmergencyBanner
-          phone={PHONE}
           message="24/7 Emergency Glass Repair — broken window? We come to you."
           cta="Call Now"
         />
-        <Header phone={PHONE} />
+        <Header />
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <Footer phone={PHONE} email={EMAIL} address={ADDRESS} />
+        <Footer />
       </body>
     </html>
   );

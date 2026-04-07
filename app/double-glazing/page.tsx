@@ -17,7 +17,6 @@ export default function RetrofitDoubleGlazingPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Upgrade your existing windows to double glazing without replacing the frames. The smart way to improve comfort, reduce noise and cut energy bills.
       </p>
-      {/* TODO: Phase 6 — content build */}
     </div>
   )
 }

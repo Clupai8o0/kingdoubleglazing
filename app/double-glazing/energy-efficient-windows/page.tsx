@@ -17,7 +17,6 @@ export default function EnergyEfficientWindowsPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Low-E glass and argon gas fill that keeps heat in winter and out in summer. Reduce your energy bills with retrofit double glazing.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

@@ -12,12 +12,14 @@
 | Concern | Reference |
 |---|---|
 | Stack, routes, file layout, data model, phases | `docs/architecture.md` |
+| **Business details (phone, email, address, social)** | **`data/site.ts` — single source of truth** |
 | Component specs, variants, usage map | `docs/components.md` |
 | Keywords per page, schema, technical SEO, snippets | `docs/seo.md` |
 | GBP, citations, reviews, backlinks | `docs/local-seo.md` |
 | Content calendar, conversion, video, CTAs | `docs/content-strategy.md` |
 | Design tokens, colors, typography, spacing | `docs/design-system.md` |
 | Change log | `docs/changelog.md` |
+| **Outstanding tasks** | **`TODO.md` — single source of truth for all TODOs** |
 | Raw research (read-only, do not modify) | `references/` |
 
 ## Skills to invoke
@@ -43,9 +45,11 @@
 6. **Components are owned, not borrowed.** No UI library runtime dependencies (no Material). Shadcn is permitted as a copy-paste source via the `shadcn-component-discovery` skill — treat each installed component as owned code. All shadcn components **must** be restyled: `rounded-none`, KDG palette, zero-JS where possible.
 7. **Zero runtime cost.** Tailwind only, no CSS-in-JS. Self-hosted fonts via `next/font`.
 8. **All copy via props.** No hardcoded text inside components. Content lives in `/data/` files.
+   - **Exception:** Contact details (phone, email, address, social) come from `data/site.ts` imported directly — not passed as props — so layout components are always in sync.
 9. **Mobile-first.** Emergency CTAs designed for thumb reach. All components responsive.
 10. **Transparent pricing.** "From $495/m²" messaging throughout. Instant Estimate Tool is the moat.
-11. **Update changelog with every significant change.** `docs/changelog.md` is the single source of truth for project history. 
+11. **Update changelog with every significant change.** `docs/changelog.md` is the single source of truth for project history.
+12. **All TODOs live in `TODO.md`.** Never scatter `// TODO` comments in source. Add to `TODO.md` instead; remove the entry when done.
 
 ## Pre-flight checklist (before any page ships)
 

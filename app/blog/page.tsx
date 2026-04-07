@@ -17,7 +17,6 @@ export default function BlogPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Practical guides and honest advice on double glazing, glass types, noise and energy for Melbourne homeowners.
       </p>
-      {/* TODO: Phase 12 — blog posts from content/blog/*.mdx */}
     </div>
   )
 }

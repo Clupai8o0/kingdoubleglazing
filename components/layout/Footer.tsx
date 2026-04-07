@@ -1,14 +1,9 @@
 import Link from 'next/link'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { footerNav } from '@/data/nav'
+import { siteConfig } from '@/data/site'
 
-type FooterProps = {
-  phone: string
-  email: string
-  address: string
-}
-
-export function Footer({ phone, email, address }: FooterProps) {
+export function Footer() {
   return (
     <footer className="bg-inverse-surface text-inverse-on-surface mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -32,26 +27,26 @@ export function Footer({ phone, email, address }: FooterProps) {
             <ul className="space-y-2 text-sm text-white/70">
               <li>
                 <a
-                  href={`tel:${phone.replace(/\s/g, '')}`}
+                  href={siteConfig.phoneHref}
                   className="inline-flex items-center gap-2 hover:text-primary-container transition-colors duration-150"
                 >
                   <Phone size={13} aria-hidden="true" />
-                  {phone}
+                  {siteConfig.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${email}`}
+                  href={`mailto:${siteConfig.email}`}
                   className="inline-flex items-center gap-2 hover:text-primary-container transition-colors duration-150"
                 >
                   <Mail size={13} aria-hidden="true" />
-                  {email}
+                  {siteConfig.email}
                 </a>
               </li>
               <li>
                 <span className="inline-flex items-start gap-2">
                   <MapPin size={13} className="mt-0.5 shrink-0" aria-hidden="true" />
-                  {address}
+                  {siteConfig.address.display}
                 </span>
               </li>
             </ul>
@@ -114,7 +109,7 @@ export function Footer({ phone, email, address }: FooterProps) {
           <p>
             © {new Date().getFullYear()} Brooklyn Glass Pty Ltd t/a King Double Glazing. All rights reserved.
           </p>
-          <p>VIC Licence No. [TODO]</p>
+          <p>VIC Licence No. {siteConfig.licenseNumber}</p>
         </div>
       </div>
     </footer>

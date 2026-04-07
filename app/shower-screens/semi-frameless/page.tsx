@@ -17,7 +17,6 @@ export default function SemiFramelessShowerScreensPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         The sweet spot between fully frameless and framed. Sleek hardware, toughened glass, installed across Melbourne.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

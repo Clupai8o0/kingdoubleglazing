@@ -17,7 +17,6 @@ export default function ShowerScreensPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Custom frameless and semi-frameless shower screens, measured and installed across Melbourne. Transparent pricing, no hidden fees.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

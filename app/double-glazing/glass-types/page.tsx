@@ -17,7 +17,6 @@ export default function GlassTypesPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Not all double glazing is equal. Compare Low-E, acoustic laminated, toughened and argon-filled IGUs to find the right glass for your Melbourne home.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

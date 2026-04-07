@@ -17,7 +17,6 @@ export default function HeritageHomesPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Retrofit double glazing that respects the character of your period home. Preserve original timber frames while gaining modern thermal and acoustic performance.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

@@ -17,7 +17,6 @@ export default function CommercialGlazingPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Glass solutions for Melbourne businesses. Shopfronts, office partitions, balustrades and commercial double glazing retrofits. Transparent pricing.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

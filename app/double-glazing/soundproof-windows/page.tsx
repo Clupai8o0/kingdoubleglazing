@@ -17,7 +17,6 @@ export default function SoundproofWindowsPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Acoustic double glazing that cuts traffic noise, barking dogs and neighbours. Laminated glass with high Rw ratings for Melbourne homes.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

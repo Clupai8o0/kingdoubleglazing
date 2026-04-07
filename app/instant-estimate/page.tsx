@@ -17,7 +17,6 @@ export default function InstantEstimatePage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Get a real estimate in 2 minutes. No calls, no obligation. Just honest pricing for your double glazing project.
       </p>
-      {/* TODO: Phase 9 — Instant Estimate Tool */}
     </div>
   )
 }

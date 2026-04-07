@@ -17,7 +17,6 @@ export default function AboutPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         We&apos;re Melbourne glaziers on a mission to bring transparent pricing to the double glazing industry. No middlemen, no upsells, no surprises.
       </p>
-      {/* TODO: Phase 6 — content build */}
     </div>
   )
 }

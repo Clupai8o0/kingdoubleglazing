@@ -21,7 +21,6 @@ export default function ContactPage() {
         </a>
         .
       </p>
-      {/* TODO: Phase 6 — contact form with Server Action */}
     </div>
   )
 }

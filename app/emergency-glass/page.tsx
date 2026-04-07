@@ -17,7 +17,6 @@ export default function EmergencyGlassPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         24/7 emergency glazier service. Broken window, smashed glass or storm damage — we board up and repair fast across Melbourne.
       </p>
-      {/* TODO: Phase 6 — content build */}
     </div>
   )
 }

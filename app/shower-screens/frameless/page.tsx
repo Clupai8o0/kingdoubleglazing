@@ -17,7 +17,6 @@ export default function FramelessShowerScreensPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         10mm toughened frameless glass, custom cut to your bathroom. Clean, modern look with minimal hardware. Installed across Melbourne.
       </p>
-      {/* TODO: Phase 8 — content build */}
     </div>
   )
 }

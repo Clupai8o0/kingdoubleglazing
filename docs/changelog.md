@@ -4,6 +4,31 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-07 — TODO.md created as single source of truth for tasks
+
+- Scraped all `// TODO` comments + placeholder markers across all pages, components, and data files
+- Created `TODO.md` at project root — grouped by priority: blocked on Tas, Phase 6/8/9/10/12, infrastructure
+- Updated `CLAUDE.md`: added `TODO.md` to routing table; added principle 12 (no inline TODO comments)
+
+---
+
+## 2026-04-07 — siteConfig wired into all layout components
+
+- Added `phoneHref` key to `data/site.ts` (ready-to-use `tel:` href, separate from `phoneTel` E.164 schema key)
+- `Header`, `Footer`, `EmergencyBanner` now import `siteConfig` directly — contact props (`phone`, `email`, `address`) removed
+- `app/layout.tsx` cleaned up: removed `PHONE`/`EMAIL`/`ADDRESS` intermediary constants and all contact prop-passing
+- Updated `CLAUDE.md`: added `data/site.ts` to routing table and noted the exception to "all copy via props" for contact details
+
+---
+
+## 2026-04-07 — Single source of truth for business details
+
+- Created `data/site.ts` — `siteConfig` with phone, phoneTel, email, address, geo, social links
+- Updated `app/layout.tsx` — imports `siteConfig` instead of inline constants
+- Updated `lib/seo/schema/localBusiness.ts` — all contact/identity fields now read from `siteConfig`; `sameAs` auto-populated from `siteConfig.social`
+
+---
+
 ## 2026-04-07 — Navbar redesign with Services dropdown
 
 - Installed `@radix-ui/react-navigation-menu`, `clsx`, `tailwind-merge`, `class-variance-authority`

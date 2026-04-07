@@ -17,7 +17,6 @@ export default function HomePage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Retrofit double glazing for existing Melbourne windows. Transparent pricing from $495/m². No pushy sales. No surprises.
       </p>
-      {/* TODO: Phase 6 — Home page content build */}
     </div>
   )
 }

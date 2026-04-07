@@ -17,7 +17,6 @@ export default function DoubleGlazingCostPage() {
       <p className="text-lg text-on-surface/70 max-w-2xl">
         Transparent double glazing pricing. No hidden fees. Use our instant estimate tool to get a real number for your project from $495/m².
       </p>
-      {/* TODO: Phase 6 — pricing hub content */}
     </div>
   )
 }
