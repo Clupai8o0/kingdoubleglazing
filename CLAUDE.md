@@ -45,6 +45,7 @@
 8. **All copy via props.** No hardcoded text inside components. Content lives in `/data/` files.
 9. **Mobile-first.** Emergency CTAs designed for thumb reach. All components responsive.
 10. **Transparent pricing.** "From $495/m²" messaging throughout. Instant Estimate Tool is the moat.
+11. **Update changelog with every significant change.** `docs/changelog.md` is the single source of truth for project history. 
 
 ## Pre-flight checklist (before any page ships)
 

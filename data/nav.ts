@@ -1,12 +1,84 @@
 export const mainNav = [
-  { label: 'Double Glazing', href: '/double-glazing/' },
+  { label: 'Home', href: '/' },
   { label: 'Emergency Glass', href: '/emergency-glass/' },
-  { label: 'Shower Screens', href: '/shower-screens/' },
-  { label: 'Splashbacks', href: '/glass-splashbacks/' },
-  { label: 'Mirrors', href: '/custom-mirrors/' },
-  { label: 'Commercial', href: '/commercial-glazing/' },
   { label: 'Areas', href: '/areas/' },
+  { label: 'About Us', href: '/about/' },
+  { label: 'Blog', href: '/blog/' },
 ] as const
+
+export type ServiceItem = {
+  label: string
+  href: string
+  description: string
+}
+
+export type ServiceGroup = {
+  heading: string
+  items: ServiceItem[]
+}
+
+export const servicesNav: ServiceGroup[] = [
+  {
+    heading: 'Double Glazing',
+    items: [
+      {
+        label: 'Retrofit Double Glazing',
+        href: '/double-glazing/',
+        description: 'Secondary glazing for existing windows',
+      },
+      {
+        label: 'Soundproof Windows',
+        href: '/double-glazing/soundproof-windows/',
+        description: 'Reduce outside noise by up to 75%',
+      },
+      {
+        label: 'Energy Efficient Windows',
+        href: '/double-glazing/energy-efficient-windows/',
+        description: 'Cut heating & cooling costs',
+      },
+      {
+        label: 'Heritage Homes',
+        href: '/double-glazing/heritage-homes/',
+        description: 'Double glazing for period properties',
+      },
+      {
+        label: 'Glass Types',
+        href: '/double-glazing/glass-types/',
+        description: 'Laminated, tinted, low-e and more',
+      },
+      {
+        label: 'Cost & Pricing',
+        href: '/double-glazing/cost/',
+        description: 'Transparent pricing from $495/m²',
+      },
+    ],
+  },
+  {
+    heading: 'Other Services',
+    items: [
+      {
+        label: 'Shower Screens',
+        href: '/shower-screens/',
+        description: 'Frameless & semi-frameless screens',
+      },
+      {
+        label: 'Glass Splashbacks',
+        href: '/glass-splashbacks/',
+        description: 'Custom kitchen & bathroom splashbacks',
+      },
+      {
+        label: 'Custom Mirrors',
+        href: '/custom-mirrors/',
+        description: 'Bespoke mirrors cut to size',
+      },
+      {
+        label: 'Commercial Glazing',
+        href: '/commercial-glazing/',
+        description: 'Offices, retail & strata',
+      },
+    ],
+  },
+]
 
 export const doubleGlazingNav = [
   { label: 'Retrofit Double Glazing', href: '/double-glazing/' },

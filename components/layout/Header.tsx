@@ -1,7 +1,18 @@
+'use client'
+
 import Link from 'next/link'
 import { Phone } from 'lucide-react'
-import { mainNav } from '@/data/nav'
+import { mainNav, servicesNav } from '@/data/nav'
 import { Button } from '@/components/ui/Button'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu'
+import { cn } from '@/lib/utils'
 
 type HeaderProps = {
   phone: string
@@ -9,7 +20,7 @@ type HeaderProps = {
 
 export function Header({ phone }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-40 glass-panel ghost-border">
+    <header className="sticky top-0 z-40 bg-surface border-b border-surface-container-high">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
@@ -28,15 +39,68 @@ export function Header({ phone }: HeaderProps) {
 
           {/* Main nav — desktop */}
           <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1">
-            {mainNav.map(({ label, href }) => (
-              <Link
-                key={href}
-                href={href}
-                className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface/70 px-3 py-2 hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150"
-              >
-                {label}
-              </Link>
-            ))}
+            {/* Home */}
+            <Link
+              href="/"
+              className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface/70 px-3 py-2 hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150"
+            >
+              Home
+            </Link>
+
+            {/* Services dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid grid-cols-2 gap-0 w-140 p-4">
+                      {servicesNav.map((group) => (
+                        <div key={group.heading}>
+                          <p className="font-headline text-xs font-semibold uppercase tracking-widest text-on-surface/40 px-3 pb-1 pt-2">
+                            {group.heading}
+                          </p>
+                          <ul>
+                            {group.items.map((item) => (
+                              <li key={item.href}>
+                                <NavigationMenuLink asChild>
+                                  <Link
+                                    href={item.href}
+                                    className={cn(
+                                      'block px-3 py-2 hover:bg-surface-container-low transition-colors duration-150',
+                                      'focus:outline-none focus:bg-surface-container-low'
+                                    )}
+                                  >
+                                    <span className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface block">
+                                      {item.label}
+                                    </span>
+                                    <span className="text-xs text-on-surface/50 font-sans normal-case tracking-normal">
+                                      {item.description}
+                                    </span>
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
+            {/* Remaining nav items */}
+            {mainNav
+              .filter(({ href }) => href !== '/')
+              .map(({ label, href }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface/70 px-3 py-2 hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150"
+                >
+                  {label}
+                </Link>
+              ))}
           </nav>
 
           {/* CTA */}
@@ -50,7 +114,7 @@ export function Header({ phone }: HeaderProps) {
               {phone}
             </Link>
             <Button as="link" href="/instant-estimate/" size="sm">
-              Get Estimate
+              Get Quote
             </Button>
           </div>
         </div>
