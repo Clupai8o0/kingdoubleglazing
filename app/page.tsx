@@ -9,6 +9,7 @@ import { CostRangeCards } from '@/components/sections/CostRangeCards'
 import { costRanges } from '@/data/cost-ranges'
 import { GlassOptions } from '@/components/blocks/GlassOptions'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
+import { Testimonials } from '@/components/sections/Testimonials'
 
 export const metadata: Metadata = buildMetadata({
   title: "Retrofit Double Glazing Melbourne | From $495/m² | King Double Glazing",
@@ -45,6 +46,7 @@ export default function HomePage() {
         variant="home"
         lastUpdated="Apr 2026"
       />
+      <Testimonials />
     </>
   )
 }

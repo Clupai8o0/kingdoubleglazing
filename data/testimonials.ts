@@ -1,0 +1,46 @@
+export const testimonials = [
+  {
+    name: 'Sarah M.',
+    suburb: 'Fitzroy North',
+    source: 'Google',
+    rating: 5,
+    text: 'Heating bill dropped noticeably in the first month. Our Victorian terrace was a nightmare to heat — now the lounge actually holds temperature overnight. The retrofit took one day and the crew left the place spotless.',
+  },
+  {
+    name: 'David K.',
+    suburb: 'Richmond',
+    source: 'Google',
+    rating: 5,
+    text: "We live 40 metres from a tram stop. The acoustic difference after the laminated glass went in was honestly shocking. I didn't expect it to be that dramatic. Wish we'd done it ten years ago.",
+  },
+  {
+    name: 'Jen & Tom R.',
+    suburb: 'Balwyn',
+    source: 'Google',
+    rating: 5,
+    text: 'Got three quotes. King came in $2,100 less than the next cheapest and finished the job in a single day. No upselling, no vague pricing — the final invoice matched the online estimate exactly.',
+  },
+  {
+    name: 'Michael A.',
+    suburb: 'St Kilda',
+    source: 'Google',
+    rating: 5,
+    text: 'Was sceptical about retrofit vs full replacement. A friend told me to just do the full windows. Glad I ignored him. You cannot tell the difference visually, and the performance specs are identical.',
+  },
+  {
+    name: 'Anna P.',
+    suburb: 'Camberwell',
+    source: 'Google',
+    rating: 5,
+    text: 'West-facing bedroom was genuinely unusable in summer — 34°C at 9pm. Tinted Low-E glass has fixed it completely. Air con barely runs now. The estimate tool online gave me the exact price before anyone even came out.',
+  },
+  {
+    name: 'Chris L.',
+    suburb: 'Brighton',
+    source: 'Google',
+    rating: 5,
+    text: "Used the instant estimate tool to budget before committing. No sales call, no pressure. The price they quoted was the price I paid. That kind of transparency is rare in the trades.",
+  },
+] as const
+
+export type Testimonial = (typeof testimonials)[number]
