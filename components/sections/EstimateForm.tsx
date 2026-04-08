@@ -5,6 +5,15 @@ import Link from 'next/link'
 import { glassTypes } from '@/data/glass-types'
 import { siteConfig } from '@/data/site'
 
+// ── Floor / level presets ─────────────────────────────────────
+const FLOOR_OPTIONS = [
+  { id: 'ground', label: 'Ground Floor',  sublabel: 'All windows at ground level',    scaffolding: 0    },
+  { id: 'upper',  label: 'Upper Floor',   sublabel: 'First floor or above',            scaffolding: 750  },
+  { id: 'mixed',  label: 'Mixed Levels',  sublabel: 'Both ground and upper windows',   scaffolding: 375  },
+] as const
+
+type FloorId = (typeof FLOOR_OPTIONS)[number]['id']
+
 // ── Window size presets ─────────────────────────────────────────
 const WINDOW_SIZES = [
   { id: 'small',    label: 'Small',          sublabel: 'Bathroom / ensuite',   area: 0.45 },
@@ -30,6 +39,7 @@ export function EstimateForm() {
   const [count,   setCount]   = useState(6)
   const [sizeId,  setSizeId]  = useState<WindowSizeId>('standard')
   const [glassId, setGlassId] = useState<GlassTypeId>('standard-clear')
+  const [floorId, setFloorId] = useState<FloorId>('ground')
 
   // View state
   const [step,      setStep]      = useState<1 | 2>(1)
@@ -46,11 +56,13 @@ export function EstimateForm() {
   // ── Calculation ────────────────────────────────────────────
   const size  = WINDOW_SIZES.find(s => s.id === sizeId)!
   const glass = glassTypes.find(g => g.id === glassId)!
+  const floor = FLOOR_OPTIONS.find(f => f.id === floorId)!
 
-  const totalArea = parseFloat((count * size.area).toFixed(1))
-  const base      = totalArea * glass.priceFrom
-  const lowEst    = roundTo100(base * 0.9)
-  const highEst   = roundTo100(base * 1.1)
+  const totalArea      = parseFloat((count * size.area).toFixed(1))
+  const base           = totalArea * glass.priceFrom
+  const scaffolding    = floor.scaffolding
+  const lowEst         = roundTo100(base * 0.9 + scaffolding)
+  const highEst        = roundTo100(base * 1.1 + scaffolding)
 
   // ── Handlers ───────────────────────────────────────────────
   function handleCalculate() {
@@ -191,7 +203,60 @@ export function EstimateForm() {
           </div>
         </fieldset>
 
-        {/* ── Section C: Glass type ── */}
+        {/* ── Section C: Floor / level ── */}
+        <fieldset className="mb-10">
+          <legend className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-on-surface/55 mb-4 block">
+            Which floor are the windows on?
+          </legend>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {FLOOR_OPTIONS.map(f => (
+              <label
+                key={f.id}
+                className={[
+                  'flex flex-col gap-1 p-4 cursor-pointer transition-colors duration-150 select-none',
+                  floorId === f.id
+                    ? 'bg-primary-container text-on-primary-fixed'
+                    : 'bg-surface-container hover:bg-surface-container-high text-on-surface',
+                ].join(' ')}
+              >
+                <input
+                  type="radio"
+                  name="floor"
+                  value={f.id}
+                  checked={floorId === f.id}
+                  onChange={() => setFloorId(f.id)}
+                  className="sr-only"
+                />
+                <span className="font-headline text-sm font-semibold uppercase tracking-wide leading-none">
+                  {f.label}
+                </span>
+                <span
+                  className={[
+                    'font-sans text-xs leading-snug mt-0.5',
+                    floorId === f.id ? 'text-on-primary-fixed/70' : 'text-on-surface/50',
+                  ].join(' ')}
+                >
+                  {f.sublabel}
+                </span>
+                {f.scaffolding > 0 && (
+                  <span
+                    className={[
+                      'font-headline text-xs font-semibold uppercase tracking-widest mt-1',
+                      floorId === f.id ? 'text-on-primary-fixed/60' : 'text-on-surface/35',
+                    ].join(' ')}
+                  >
+                    +${f.scaffolding} scaffolding
+                  </span>
+                )}
+              </label>
+            ))}
+          </div>
+          <p className="mt-3 font-sans text-xs text-on-surface/40">
+            Upper-floor windows without balcony access require scaffolding. Quoted separately at site measure.
+          </p>
+        </fieldset>
+
+        {/* ── Section D: Glass type ── */}
         <fieldset className="mb-10">
           <legend className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-on-surface/55 mb-4 block">
             Glass type
@@ -302,6 +367,10 @@ export function EstimateForm() {
             <BreakdownRow label="Total glass area" value={`${totalArea} m²`} />
             <BreakdownRow label="Glass type" value={glass.name} />
             <BreakdownRow label="Base rate" value={`$${glass.priceFrom}/m²`} />
+            <BreakdownRow label="Floor level" value={floor.label} />
+            {scaffolding > 0 && (
+              <BreakdownRow label="Scaffolding (est.)" value={fmtAUD(scaffolding)} />
+            )}
             <div className="h-px bg-primary-container/30 my-1" aria-hidden="true" />
             <BreakdownRow
               label="Estimate range"
@@ -311,7 +380,8 @@ export function EstimateForm() {
           </dl>
           <p className="mt-4 font-sans text-xs text-on-surface/40 leading-relaxed">
             Includes glass, installation, frame prep, rubbish removal, and 10-year warranty.
-            VEU rebates (typically $300–$900) applied at invoice stage.
+            {scaffolding > 0 && ' Scaffolding cost confirmed at on-site measure.'}
+            {' '}VEU rebates (typically $300–$900) applied at invoice stage.
           </p>
         </div>
 

@@ -57,7 +57,7 @@ const estimateTrustItems = [
   { icon: PhoneOff,    label: 'No sales calls'           },
   { icon: ShieldCheck, label: '10-Year Warranty'         },
   { icon: Clock,       label: 'Result in 90 seconds'     },
-] as const
+]
 
 // ── Page ────────────────────────────────────────────────────────
 export default function InstantEstimatePage() {
