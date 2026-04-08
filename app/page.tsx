@@ -3,6 +3,7 @@ import { buildMetadata } from '@/lib/seo/generateMetadata'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ProblemSolutionSection } from '@/components/sections/ProblemSolutionSection'
+import { ServicesSection } from '@/components/sections/ServicesSection'
 
 export const metadata: Metadata = buildMetadata({
   title: "Retrofit Double Glazing Melbourne | From $495/m² | King Double Glazing",
@@ -26,6 +27,7 @@ export default function HomePage() {
       />
       <TrustBar />
       <ProblemSolutionSection />
+      <ServicesSection />
     </>
   )
 }
