@@ -4,6 +4,7 @@ export const testimonials = [
     suburb: 'Fitzroy North',
     source: 'Google',
     rating: 5,
+    tag: 'retrofit',
     text: 'Heating bill dropped noticeably in the first month. Our Victorian terrace was a nightmare to heat — now the lounge actually holds temperature overnight. The retrofit took one day and the crew left the place spotless.',
   },
   {
@@ -11,6 +12,7 @@ export const testimonials = [
     suburb: 'Richmond',
     source: 'Google',
     rating: 5,
+    tag: 'noise',
     text: "We live 40 metres from a tram stop. The acoustic difference after the laminated glass went in was honestly shocking. I didn't expect it to be that dramatic. Wish we'd done it ten years ago.",
   },
   {
@@ -18,6 +20,7 @@ export const testimonials = [
     suburb: 'Balwyn',
     source: 'Google',
     rating: 5,
+    tag: 'retrofit',
     text: 'Got three quotes. King came in $2,100 less than the next cheapest and finished the job in a single day. No upselling, no vague pricing — the final invoice matched the online estimate exactly.',
   },
   {
@@ -25,6 +28,7 @@ export const testimonials = [
     suburb: 'St Kilda',
     source: 'Google',
     rating: 5,
+    tag: 'retrofit',
     text: 'Was sceptical about retrofit vs full replacement. A friend told me to just do the full windows. Glad I ignored him. You cannot tell the difference visually, and the performance specs are identical.',
   },
   {
@@ -32,6 +36,7 @@ export const testimonials = [
     suburb: 'Camberwell',
     source: 'Google',
     rating: 5,
+    tag: 'retrofit',
     text: 'West-facing bedroom was genuinely unusable in summer — 34°C at 9pm. Tinted Low-E glass has fixed it completely. Air con barely runs now. The estimate tool online gave me the exact price before anyone even came out.',
   },
   {
@@ -39,8 +44,26 @@ export const testimonials = [
     suburb: 'Brighton',
     source: 'Google',
     rating: 5,
+    tag: 'retrofit',
     text: "Used the instant estimate tool to budget before committing. No sales call, no pressure. The price they quoted was the price I paid. That kind of transparency is rare in the trades.",
+  },
+  {
+    name: 'Marcus & Priya N.',
+    suburb: 'Brunswick',
+    source: 'Google',
+    rating: 5,
+    tag: 'noise',
+    text: "Our bedroom faces Sydney Road. Friday and Saturday nights were unusable — we were wearing earplugs to sleep. The acoustic laminated glass has completely changed the situation. The tram noise that used to wake us at 6 am is now barely audible. I genuinely did not think glass could make that much difference.",
+  },
+  {
+    name: 'Helen C.',
+    suburb: 'Port Melbourne',
+    source: 'Google',
+    rating: 5,
+    tag: 'noise',
+    text: "Flight path noise was the main reason we almost moved. A friend suggested acoustic glazing as a last resort before we listed the house. We're not moving. The difference in the front rooms is night and day — my daughter actually sleeps through now. Worth every cent.",
   },
 ] as const
 
 export type Testimonial = (typeof testimonials)[number]
+export type TestimonialTag = Testimonial['tag']
