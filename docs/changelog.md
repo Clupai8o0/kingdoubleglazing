@@ -4,6 +4,18 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-09 — Glass Splashbacks page built
+
+- Created `app/glass-splashbacks/page.tsx` — full page replacing the placeholder stub
+- Sections: Hero (compact) → BenefitsGrid → BeforeAfter → FAQ → CtaBanner
+- 6 splashback-specific benefits: any colour, longevity, cleanability, custom sizing, AS/NZS 2208, transparent pricing
+- BeforeAfter: 4 metrics comparing tiles vs glass (grout lines, cleaning time, 5-year appearance, colour options)
+- 8 FAQ items defined inline (gas cooktop, colours, adhesive fixing, over-tiles installation, cut-outs, tiles vs glass)
+- JSON-LD: Service + BreadcrumbList + FAQPage schemas
+- Primary keyword: glass splashbacks melbourne
+
+---
+
 ## 2026-04-09 — Semi-frameless shower screens page built
 
 - Created `app/shower-screens/semi-frameless/page.tsx` — full page replacing the placeholder stub
