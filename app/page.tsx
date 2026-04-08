@@ -8,6 +8,7 @@ import { BenefitsGrid } from '@/components/sections/BenefitsGrid'
 import { CostRangeCards } from '@/components/sections/CostRangeCards'
 import { costRanges } from '@/data/cost-ranges'
 import { GlassOptions } from '@/components/blocks/GlassOptions'
+import { ProcessSteps } from '@/components/sections/ProcessSteps'
 
 export const metadata: Metadata = buildMetadata({
   title: "Retrofit Double Glazing Melbourne | From $495/m² | King Double Glazing",
@@ -33,6 +34,7 @@ export default function HomePage() {
       <ProblemSolutionSection />
       <ServicesSection />
       <BenefitsGrid />
+      <ProcessSteps />
       <GlassOptions
         variant="preview"
         heading="Glass That Fits Your Home"
