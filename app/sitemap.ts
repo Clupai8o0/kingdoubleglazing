@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { blogPosts } from '@/data/blog-posts'
 
 const BASE_URL = 'https://kingdoubleglazing.com.au'
 
@@ -41,5 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...suburbRoutes]
+  const blogPostRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}/`,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+    lastModified: post.dateModified ?? post.datePublished,
+  }))
+
+  return [...staticRoutes, ...suburbRoutes, ...blogPostRoutes]
 }

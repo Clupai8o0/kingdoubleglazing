@@ -4,6 +4,20 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-09 — Blog Post page built (`/blog/[slug]/`)
+
+- Implemented `app/blog/[slug]/page.tsx`: `generateStaticParams` from `blogPosts`, `generateMetadata` per-post, Hero (compact, post title as H1) → MDX article body → FAQ accordion → Related Posts grid → Related Services links → CtaBanner
+- Installed `next-mdx-remote` (RSC) + `remark-gfm` for MDX rendering
+- Created `lib/blog.ts` — filesystem utilities: `getBlogPost`, `getBlogPostContent`, `getRelatedPosts`, `getAllBlogSlugs`
+- Created `components/blog/BlogProse.tsx` — KDG-styled MDX component overrides (h2–h4, p, ul/ol/li, blockquote, a, table, hr, code/pre); zero JS, Tailwind only
+- Expanded `data/blog-posts.ts` — added `primaryService`, `relatedServices`, `relatedPosts`, `faqItems?`, `dateModified?` fields to `BlogPost` interface; populated all 10 posts with full internal-linking metadata and per-post FAQ items for commercially important posts
+- Created `content/blog/*.mdx` — full article content for all 10 posts; first 6 are full-length guides, last 4 complete articles
+- JSON-LD: Article + BreadcrumbList on every post; FAQPage added when `faqItems` defined
+- Updated `app/sitemap.ts` — blog post routes auto-generated from `blogPosts` array with `lastModified` from `dateModified ?? datePublished`
+- Internal linking per post: `primaryService` (Value Ledger inline CTA), `relatedServices` footer bar (2–3 links), estimate tool link, 1–2 related posts programmatically rendered
+
+---
+
 ## 2026-04-09 — Blog Index page built (`/blog/`)
 
 - Rebuilt `app/blog/page.tsx` from stub: compact HeroSection → category filter nav → post grid → service internal links → CtaBanner
