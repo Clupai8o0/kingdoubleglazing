@@ -4,6 +4,21 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-09 — Instant Estimate Tool (draft) built
+
+- Rebuilt `app/instant-estimate/page.tsx` from stub to full page: Hero → TrustBar → ProcessSteps → EstimateForm → FAQ → CtaBanner
+- Created `components/sections/EstimateForm.tsx` — `'use client'` multi-step calculator:
+  - Step 1: window count stepper (1–30), window size radio cards (4 presets with m² area), glass type radio cards (from `glassTypes` data with live $/m² prices)
+  - Step 2: estimate revealed **before** any lead capture — large gold price range + Value Ledger breakdown; optional "Email Me This Estimate" lead form (name + email + phone)
+  - Success state after optional form submission
+- Created `data/estimate-faq.ts` — 8 FAQ items + `estimateProcessSteps` (3 estimate-specific steps)
+- JSON-LD: WebApplication schema + FAQPage schema
+- TrustBar: estimate-specific trust items (accuracy, no email required, no sales calls, 10-yr warranty, 90-second result)
+- Key UX principle: number is shown first; lead capture is a soft, optional step below — the differentiator vs competitor gated-quote tools
+- TODO: wire `handleLeadSubmit` to `/api/estimate-lead` route when backend ready
+
+---
+
 ## 2026-04-09 — Commercial Glazing page built
 
 - Created `app/commercial-glazing/page.tsx` — full B2B page replacing the placeholder stub
