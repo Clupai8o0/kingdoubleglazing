@@ -21,7 +21,7 @@ export const contactFaq = [
   },
   {
     q: 'What information is helpful to have ready?',
-    a: 'Approximate window count, whether windows are single or sliding, which floor they're on, and any specific concern (noise, heat, drafts). Photos via email or WhatsApp are useful. If you don\'t have measurements, that\'s fine — the free measure-up handles that.',
+    a: "Approximate window count, whether windows are single or sliding, which floor they're on, and any specific concern (noise, heat, drafts). Photos via email or WhatsApp are useful. If you don't have measurements, that's fine — the free measure-up handles that.",
   },
 ] as const
 
