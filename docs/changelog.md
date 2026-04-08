@@ -4,6 +4,30 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-09 — Blog Index page built (`/blog/`)
+
+- Rebuilt `app/blog/page.tsx` from stub: compact HeroSection → category filter nav → post grid → service internal links → CtaBanner
+- Created `data/blog-posts.ts` — 10 blog posts across 6 categories (`retrofit`, `pricing`, `acoustic`, `energy`, `heritage`, `glass-types`) with `BlogPost` interface and `BLOG_CATEGORIES` lookup array
+- Category filtering: server-side via `searchParams.category` — no `'use client'` needed; filter links use plain Next.js `<Link>` components
+- Post grid: 3-col lg / 2-col md / 1-col mobile; cards show category badge, read time, date, title, excerpt, article link
+- JSON-LD: `Blog` schema (with `blogPost` array of `BlogPosting` entries) + `BreadcrumbList`
+- Internal links section: 7 related service pages linked below the grid
+- `animate-stagger-child` on grid cards for scroll-driven staggered reveal
+
+---
+
+## 2026-04-09 — Contact page built + navbar linked
+
+- Rebuilt `app/contact/page.tsx` from stub: Hero (compact, 2-col with contact cards) → TrustBar → ContactForm → ProcessSteps → FAQ → CtaBanner
+- Created `app/contact/actions.ts` — Server Action `submitContactForm` with honeypot protection, field validation, and TODO stub for mailer/CRM integration
+- Created `components/sections/ContactForm.tsx` — `'use client'` form using `useActionState`; includes service dropdown, email+phone side-by-side, success/error states
+- Created `data/contact-faq.ts` — 6 FAQ items + `ContactFaqItem` type
+- Added `{ label: 'Contact', href: '/contact/' }` to `mainNav` in `data/nav.ts` — automatically appears in desktop nav and mobile sheet
+- `footerNav.company` already had Contact entry — no footer change needed
+- JSON-LD: ContactPage + LocalBusiness + FAQPage schemas
+
+---
+
 ## 2026-04-09 — Instant Estimate Tool (draft) built
 
 - Rebuilt `app/instant-estimate/page.tsx` from stub to full page: Hero → TrustBar → ProcessSteps → EstimateForm → FAQ → CtaBanner

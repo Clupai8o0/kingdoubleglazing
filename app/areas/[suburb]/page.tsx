@@ -1,18 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { buildMetadata } from '@/lib/seo/generateMetadata'
-
-// Expand as data/suburbs/*.ts files are added
-const suburbData: Record<string, { name: string; postcode: string }> = {
-  burwood: { name: 'Burwood', postcode: '3125' },
-  camberwell: { name: 'Camberwell', postcode: '3124' },
-  'glen-waverley': { name: 'Glen Waverley', postcode: '3150' },
-  hawthorn: { name: 'Hawthorn', postcode: '3122' },
-  'box-hill': { name: 'Box Hill', postcode: '3128' },
-}
+import { suburbs, suburbBySlug } from '@/data/suburbs'
 
 export async function generateStaticParams() {
-  return Object.keys(suburbData).map((slug) => ({ suburb: slug }))
+  return suburbs.map(({ slug }) => ({ suburb: slug }))
 }
 
 export async function generateMetadata({
