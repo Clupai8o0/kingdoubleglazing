@@ -136,7 +136,7 @@ function GlassCard({
       {compact ? (
         // ── Preview: price only ──────────────────────────────────────────
         <div className="mt-auto">
-          <p className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-on-surface/40 mb-1">
+          <p className="font-headline text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-on-surface/40 mb-1">
             From
           </p>
           <p
@@ -151,29 +151,29 @@ function GlassCard({
         <dl className="border-t border-on-surface/10 pt-5 mb-6 space-y-3">
 
           <div className="flex items-baseline justify-between gap-2">
-            <dt className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
+            <dt className="font-headline text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
               U-Value
             </dt>
             <dd className="font-headline text-sm font-bold text-on-surface">
               {glass.uValue}
-              <span className="font-sans text-[0.65rem] font-normal text-on-surface/40 ml-1">W/m²K</span>
+              <span className="font-sans text-[0.8125rem] font-normal text-on-surface/40 ml-1">W/m²K</span>
             </dd>
           </div>
 
           <div className="flex items-baseline justify-between gap-2">
-            <dt className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
+            <dt className="font-headline text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
               Rw Rating
             </dt>
             <dd className="font-headline text-sm font-bold text-on-surface">
               {glass.rwRating}
-              <span className="font-sans text-[0.65rem] font-normal text-on-surface/40 ml-1">dB</span>
+              <span className="font-sans text-[0.8125rem] font-normal text-on-surface/40 ml-1">dB</span>
             </dd>
           </div>
 
           {/* Heat reduction — visualised as a bar */}
           <div>
             <div className="flex items-baseline justify-between gap-2 mb-1.5">
-              <dt className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
+              <dt className="font-headline text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
                 Heat Reduction
               </dt>
               <dd className="font-headline text-sm font-bold text-on-surface">
@@ -191,7 +191,7 @@ function GlassCard({
 
           {/* Price — value-ledger accent */}
           <div className="border-l-4 border-primary-container pl-3 pt-3 mt-1 flex items-baseline justify-between gap-2">
-            <dt className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
+            <dt className="font-headline text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 shrink-0">
               From
             </dt>
             <dd
@@ -206,7 +206,7 @@ function GlassCard({
       )}
 
       {/* Best for */}
-      <p className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 mb-5">
+      <p className="font-headline text-[0.75rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40 mb-5">
         Best for: <span className="text-primary">{glass.bestFor}</span>
       </p>
 

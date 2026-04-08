@@ -60,7 +60,7 @@ export function Testimonials({
 
         {/* Mobile swipe hint */}
         <p
-          className="mt-4 text-center font-headline text-[0.65rem] uppercase tracking-[0.2em] text-on-surface/30 md:hidden"
+          className="mt-4 text-center font-headline text-[0.8125rem] uppercase tracking-[0.2em] text-on-surface/30 md:hidden"
           aria-hidden="true"
         >
           Swipe to read more
@@ -136,7 +136,7 @@ function TestimonialCard({
           <p className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface leading-none mb-1">
             {t.name}
           </p>
-          <p className="font-headline text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40">
+          <p className="font-headline text-[0.8125rem] font-semibold uppercase tracking-[0.15em] text-on-surface/40">
             {t.suburb} · {t.source}
           </p>
         </div>

@@ -50,7 +50,7 @@ export function CostRangeCards({
             )}
           </div>
           {lastUpdated && (
-            <p className="font-headline text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-on-surface/40 shrink-0">
+            <p className="font-headline text-[0.8125rem] font-semibold uppercase tracking-[0.2em] text-on-surface/40 shrink-0">
               Pricing updated: {lastUpdated}
             </p>
           )}
@@ -91,7 +91,7 @@ export function CostRangeCards({
                 {highlighted && eyebrow && (
                   <div
                     aria-label={eyebrow}
-                    className="bg-inverse-surface text-inverse-on-surface font-headline text-[0.6rem] font-semibold uppercase tracking-[0.2em] px-3 py-2 text-center -mx-7 -mt-7 md:-mx-8 md:-mt-8 mb-7 md:mb-8"
+                    className="bg-inverse-surface text-inverse-on-surface font-headline text-[0.75rem] font-semibold uppercase tracking-[0.2em] px-3 py-2 text-center -mx-7 -mt-7 md:-mx-8 md:-mt-8 mb-7 md:mb-8"
                   >
                     {eyebrow}
                   </div>
@@ -99,7 +99,7 @@ export function CostRangeCards({
 
                 {/* Non-highlighted eyebrow — inline small cap */}
                 {!highlighted && eyebrow && (
-                  <p className={`font-headline text-[0.6rem] font-semibold uppercase tracking-[0.2em] ${textMuted} mb-3`}>
+                  <p className={`font-headline text-[0.75rem] font-semibold uppercase tracking-[0.2em] ${textMuted} mb-3`}>
                     {eyebrow}
                   </p>
                 )}
@@ -119,7 +119,7 @@ export function CostRangeCards({
 
                 {/* Price range — the hero of the card */}
                 <div className="mb-2">
-                  <p className={`font-headline text-[0.65rem] font-semibold uppercase tracking-[0.15em] ${textMuted} mb-1`}>
+                  <p className={`font-headline text-[0.8125rem] font-semibold uppercase tracking-[0.15em] ${textMuted} mb-1`}>
                     From
                   </p>
                   <div

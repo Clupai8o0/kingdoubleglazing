@@ -74,7 +74,7 @@ export function CtaBanner({
             ].map((item) => (
               <p
                 key={item}
-                className="font-headline text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-on-primary-fixed/50"
+                className="font-headline text-[0.8125rem] font-semibold uppercase tracking-[0.2em] text-on-primary-fixed/50"
               >
                 ✓ {item}
               </p>

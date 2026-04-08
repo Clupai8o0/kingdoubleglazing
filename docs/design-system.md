@@ -38,11 +38,14 @@ Hero CTAs may use a **"Molten Glass"** gradient: `linear-gradient(to right, #705
 
 ## 2. Typography: Voice of Authority
 
+**Base font size: `112.5%` on `html` (= 18px).** All `rem` values scale from this. Set in `app/globals.css`. Do not override on `html` or `body`.
+
 | Role | Font | Weight | Size | Case | Usage |
 |---|---|---|---|---|---|
 | Display | Bebas Neue | 400 | `3.5rem`+ | Uppercase | Hero anchors, "STOP DON'T OVERPAY" stamps |
 | Headline | Barlow Condensed | 600–700 | `1.5rem–2.5rem` | Sentence | Facts headers, section titles |
-| Body | Barlow | 400–600 | `1rem–1.125rem` | Sentence | All copy, specs, value propositions |
+| Body | Barlow | 400–600 | `1rem–1.125rem` | Sentence | All copy, specs, value propositions — minimum `1rem` (18px) |
+| Labels / eyebrows | Barlow Condensed | 600 | `0.75rem` min | Uppercase | Spec labels, badges, section eyebrows — never below `0.75rem` |
 
 **Tailwind utilities:** `font-display`, `font-headline`, `font-sans`
 

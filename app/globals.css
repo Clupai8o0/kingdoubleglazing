@@ -42,6 +42,11 @@
   --spacing-section: 3.5rem;
 }
 
+/* Accessibility: 18px base for older users — all rem values scale up proportionally */
+html {
+  font-size: 112.5%;
+}
+
 body {
   background: var(--color-surface);
   color: var(--color-on-surface);

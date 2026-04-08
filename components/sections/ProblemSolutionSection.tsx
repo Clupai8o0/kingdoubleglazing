@@ -58,7 +58,7 @@ export function ProblemSolutionSection({
 
             {/* Dark caption bar — bottom-right overlay */}
             <div className="absolute bottom-0 right-0 bg-inverse-surface px-5 py-4 max-w-[55%]">
-              <p className="font-headline text-[0.65rem] font-semibold uppercase tracking-widest text-inverse-on-surface/50 mb-0.5">
+              <p className="font-headline text-[0.8125rem] font-semibold uppercase tracking-widest text-inverse-on-surface/50 mb-0.5">
                 {imageCaption.eyebrow}
               </p>
               <p className="font-display uppercase text-primary-container leading-none"
