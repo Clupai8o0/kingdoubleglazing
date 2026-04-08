@@ -95,6 +95,30 @@ export const testimonials = [
     tag: 'heritage',
     text: "Our Victorian terrace is on the Heritage Overlay and I was nervous about any window work. King assessed the frames, confirmed the retrofit was permit-free, and did the whole house in a day. The original sash windows still look original — you'd never know the glass had changed. Warmer, quieter, no heritage headache.",
   },
+  {
+    name: 'Paul & Sandra O.',
+    suburb: 'Hawthorn',
+    source: 'Google',
+    rating: 5,
+    tag: 'emergency',
+    text: "Woke up to a burglary at 3am — back door glass completely smashed. Called King at 6am, glazier was here by 7:45am, property secured before we left for work. Didn't expect anyone to show up that fast. They boarded it properly, not just cardboard, and came back two days later with the permanent glass. Exactly what you need when you're in shock.",
+  },
+  {
+    name: 'Rental Manager — South Yarra',
+    suburb: 'South Yarra',
+    source: 'Google',
+    rating: 5,
+    tag: 'emergency',
+    text: "Tenant called me at 7pm on a Friday — kitchen window smashed. King had a glazier there by 9pm and replaced the glass permanently on the same visit. No board-up, no return trip, no landlord nightmare over the weekend. I've used them for three emergency jobs now and the response is always the same.",
+  },
+  {
+    name: 'Diane K.',
+    suburb: 'Footscray',
+    source: 'Google',
+    rating: 5,
+    tag: 'emergency',
+    text: "Storm took out my lounge window at 11pm on a Wednesday. I expected to be told someone would come in the morning. King had a glazier here within the hour. He cleaned up the glass, boarded the frame properly, and the permanent replacement was fitted two days later. Professional job, not a handyman with a piece of wood.",
+  },
 ] as const
 
 export type Testimonial = (typeof testimonials)[number]
