@@ -12,7 +12,7 @@ import { CtaBanner } from '@/components/sections/CtaBanner'
 export const metadata: Metadata = buildMetadata({
   title: "About King Double Glazing | Melbourne's Anti-Ripoff Glaziers",
   description:
-    'Meet Cas — 40+ years in glazing, founded King Double Glazing to cut costs by 30%. Transparent pricing, no middlemen, no upsells. Melbourne-wide.',
+    'Meet Tas Markou — 40+ years in glazing, founded King Double Glazing to cut costs by 30%. Transparent pricing, no middlemen, no upsells. Melbourne-wide.',
   path: '/about/',
 })
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
       <ServicesSection heading="Our Services" />
       <CtaBanner
         heading={"Ready to\nGet Started?"}
-        subtext="Talk directly to Cas — no call centres, no pushy salespeople. Just honest advice and transparent pricing."
+        subtext="Talk directly to Tas — no call centres, no pushy salespeople. Just honest advice and transparent pricing."
       />
     </>
   )

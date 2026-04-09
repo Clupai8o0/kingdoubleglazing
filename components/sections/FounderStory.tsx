@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { siteConfig } from '@/data/site'
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FounderStory — multi-section personal profile for Casmaku (Cas)
+// FounderStory — multi-section personal profile for Tas Markou (Tas)
 // Broken into four distinct visual sections that cascade down the page.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -38,14 +38,14 @@ function FounderHero() {
         style={{ fontSize: 'clamp(8rem, 22vw, 18rem)' }}
         aria-hidden="true"
       >
-        CAS
+        TAS
       </span>
 
       <div className="relative max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
 
-          {/* Left — identity block */}
-          <div>
+          {/* Left — identity block + stats */}
+          <div className="flex flex-col">
             <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-primary-container mb-4">
               Meet Your Glazier
             </p>
@@ -55,7 +55,7 @@ function FounderHero() {
               className="font-display uppercase leading-[0.88] text-inverse-on-surface mb-2"
               style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)' }}
             >
-              <span className="block">Casmaku</span>
+              <span className="block">Tas Markou</span>
               <span className="block text-primary-container">Founder</span>
             </h2>
 
@@ -65,7 +65,7 @@ function FounderHero() {
 
             {/* Intro paragraph */}
             <p className="font-sans text-base text-inverse-on-surface/70 leading-relaxed max-w-md">
-              Hi, I'm Cas. Glass has been part of my life for as long as I can remember —
+              Hi, I'm Tas. Glass has been part of my life for as long as I can remember —
               and after more than four decades in the industry, I still love what I do.
               King Double Glazing is the result of everything I've learned: a smarter,
               more honest way to upgrade homes and buildings.
@@ -74,30 +74,16 @@ function FounderHero() {
             {/* Call to action — "Have a chat" */}
             <Link
               href={siteConfig.phoneHref}
-              className="mt-8 inline-flex items-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-6 py-3 hover:bg-primary-fixed-dim transition-colors duration-150"
+              className="mt-8 mb-10 self-start inline-flex items-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-6 py-3 hover:bg-primary-fixed-dim transition-colors duration-150"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">
                 <path d="M3 1h3l1.5 3.5-1.5 1a8.5 8.5 0 004.5 4.5l1-1.5L15 10v3a1 1 0 01-1 1A13 13 0 012 2a1 1 0 011-1z" fill="currentColor"/>
               </svg>
-              Have a Chat with Cas
+              Have a Chat with Tas
             </Link>
-          </div>
-
-          {/* Right — founder photo + stats ledger */}
-          <div className="flex flex-col gap-6 self-start">
-
-            {/* Founder photo */}
-            <div className="relative w-full aspect-4/3 overflow-hidden">
-              <Image
-                src="/testimonial-founder/founder.webp"
-                alt="Casmaku, founder of King Double Glazing, Melbourne glazing specialist"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
 
             {/* Stats ledger */}
-            <div className="grid grid-cols-2 gap-0 ghost-border">
+            <div className="grid grid-cols-2 gap-0 ghost-border mt-auto">
             {stats.map(({ value, label }, i) => (
               <div
                 key={label}
@@ -120,7 +106,16 @@ function FounderHero() {
               </div>
             ))}
             </div>
+          </div>
 
+          {/* Right — founder photo filling column height */}
+          <div className="relative min-h-[480px] lg:min-h-0 overflow-hidden">
+            <Image
+              src="/testimonial-founder/founder.webp"
+              alt="Tas Markou, founder of King Double Glazing, Melbourne glazing specialist"
+              fill
+              className="object-cover object-top"
+            />
           </div>
 
         </div>
@@ -169,7 +164,7 @@ function FounderOrigin() {
             <div className="space-y-5 font-sans text-base text-on-surface/70 leading-relaxed max-w-xl">
               <p>
                 What started as helping out in the family workshop quickly became
-                a lifelong calling. After finishing school, Cas stepped into the
+                a lifelong calling. After finishing school, Tas stepped into the
                 industry professionally — working alongside large glazing companies
                 before moving into window manufacturing.
               </p>
@@ -269,7 +264,7 @@ function FounderMission() {
               <span className="block">Way to Glaze</span>
             </h2>
             <p className="font-sans text-base text-on-primary-fixed/70 leading-relaxed max-w-md">
-              With more than 40 years in the trade, Cas has seen where the industry
+              With more than 40 years in the trade, Tas has seen where the industry
               falls short. King Double Glazing was built to fix that — a retrofit
               double glazing system designed to work with most existing domestic and
               commercial frames, delivering high-quality results while cutting costs
@@ -341,7 +336,7 @@ function FounderPhilosophy() {
 
             <div className="space-y-5 font-sans text-base text-on-surface/70 leading-relaxed max-w-xl">
               <p>
-                Cas is family-oriented and genuinely enjoys sharing what he's learned
+                Tas is family-oriented and genuinely enjoys sharing what he's learned
                 over four decades in the trade. There's no hard sell, no pushy follow-ups,
                 and no obligation to commit on the spot.
               </p>
@@ -353,7 +348,7 @@ function FounderPhilosophy() {
               <p>
                 That philosophy is baked into everything King Double Glazing does —
                 from the way quotes are presented to the way jobs are handled on-site.
-                You deal with Cas directly. No middlemen. No runaround.
+                You deal with Tas directly. No middlemen. No runaround.
               </p>
             </div>
 
@@ -389,7 +384,7 @@ function FounderPhilosophy() {
                   {
                     icon: '01',
                     heading: 'Straight Answers',
-                    body: 'Cas gives you honest information up front — no vague estimates designed to "get you in the door".',
+                    body: 'Tas gives you honest information up front — no vague estimates designed to "get you in the door".',
                   },
                   {
                     icon: '02',
