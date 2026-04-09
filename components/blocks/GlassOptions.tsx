@@ -214,9 +214,8 @@ function GlassCard({
       <Link
         href={compact ? `/double-glazing/glass-types/#${glass.id}` : `#${glass.id}`}
         className="inline-flex items-center gap-2 font-headline text-sm font-semibold uppercase tracking-[0.1em] text-on-surface group-hover:text-primary transition-colors duration-150"
-        aria-label={`Learn more about ${glass.name}`}
       >
-        Learn more
+        Learn more<span className="sr-only"> about {glass.name}</span>
         <ArrowRight
           size={14}
           aria-hidden="true"

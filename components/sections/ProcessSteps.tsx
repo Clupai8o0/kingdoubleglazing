@@ -117,6 +117,7 @@ function StepCard({
               src={step.imageSrc}
               alt={step.imageAlt ?? step.title}
               fill
+              sizes="(min-width: 768px) 25vw, 100vw"
               className="object-cover"
             />
           </div>

@@ -4,6 +4,16 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-10 — PageSpeed fixes (mobile 80→target 90+, accessibility 88→96+, SEO 92→100)
+
+- **ProcessSteps image `sizes`** (`components/sections/ProcessSteps.tsx`): Added `sizes="(min-width: 768px) 25vw, 100vw"` to step images; was defaulting to full-width causing ~278 KiB over-download on desktop where images display at ~25vw
+- **Stars `role="img"`** (`components/sections/Testimonials.tsx`): Added `role="img"` to the star-rating `<div>`; `aria-label` is only valid when the element has a role that permits naming — fixes "Elements use prohibited ARIA attributes" audit on both mobile and desktop
+- **FloatingNav `inert`** (`components/layout/FloatingNav.tsx`): Replaced `aria-hidden={!show}` with `inert={!show}` (React 19 boolean attribute); removed all individual `tabIndex` props and `ts-expect-error` hack — `inert` handles focus, pointer events, and AT visibility atomically; fixes "aria-hidden contains focusable descendants" audit on desktop
+- **GlassOptions link text** (`components/blocks/GlassOptions.tsx`): Added `<span className="sr-only"> about {glass.name}</span>` to "Learn more" links; removed now-redundant `aria-label` prop; fixes "Links do not have descriptive text" SEO audit (3 links flagged as "LEARN MORE")
+- **Security headers** (`next.config.ts`): Added `X-Frame-Options: SAMEORIGIN`, `X-Content-Type-Options: nosniff`, `Strict-Transport-Security` (with includeSubDomains + preload), `Cross-Origin-Opener-Policy: same-origin-allow-popups`, `Referrer-Policy`, `Permissions-Policy` via Next.js `headers()` config — resolves all "Best Practices / Trust and Safety" advisory flags
+
+---
+
 ## 2026-04-10 — SEO content depth
 
 - **Sitemap** (`app/sitemap.ts`): Removed hardcoded 5-suburb slug list; now imports `suburbs` from `data/suburbs.ts` and maps all 30 suburb slugs dynamically — previously 25 suburb pages were invisible to Google

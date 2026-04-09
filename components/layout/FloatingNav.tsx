@@ -72,9 +72,9 @@ export function FloatingNav() {
       className={cn(
         'fixed top-0 inset-x-0 z-50',
         'transition-transform duration-300 ease-in-out',
-        show ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'
+        show ? 'translate-y-0' : '-translate-y-full pointer-events-none'
       )}
-      aria-hidden={!show}
+      inert={!show}
     >
       <nav
         className="backdrop-blur-xl bg-black/92 border-b border-white/8"
@@ -88,7 +88,6 @@ export function FloatingNav() {
               href="/"
               className="flex items-center shrink-0"
               aria-label="King Double Glazing — home"
-              tabIndex={show ? 0 : -1}
             >
               <Image
                 src={siteConfig.logos.dark}
@@ -103,7 +102,6 @@ export function FloatingNav() {
             <div className="hidden lg:flex items-center gap-1">
               <Link
                 href="/"
-                tabIndex={show ? 0 : -1}
                 className="font-headline text-xs font-semibold uppercase tracking-wide px-3 py-2 text-white/70 hover:text-white transition-colors duration-150"
               >
                 Home
@@ -156,7 +154,6 @@ export function FloatingNav() {
                   <Link
                     key={href}
                     href={href}
-                    tabIndex={show ? 0 : -1}
                     className="font-headline text-xs font-semibold uppercase tracking-wide px-3 py-2 text-white/70 hover:text-white transition-colors duration-150"
                   >
                     {label}
@@ -168,7 +165,6 @@ export function FloatingNav() {
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 href={siteConfig.phoneHref}
-                tabIndex={show ? 0 : -1}
                 className="hidden sm:inline-flex items-center gap-1.5 font-headline text-xs font-semibold uppercase tracking-wide text-white/70 hover:text-white transition-colors duration-150"
                 aria-label={`Call us: ${siteConfig.phone}`}
               >
@@ -179,8 +175,6 @@ export function FloatingNav() {
                 as="link"
                 href="/instant-estimate/"
                 size="sm"
-                // @ts-expect-error — tabIndex not in Button's prop type but passes through to Link
-                tabIndex={show ? 0 : -1}
               >
                 Get Quote
               </Button>
