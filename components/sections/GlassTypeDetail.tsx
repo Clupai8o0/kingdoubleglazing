@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { ZoomableImage } from '@/components/ui/ZoomableImage'
 
 interface Spec {
   label: string
@@ -27,15 +27,11 @@ export function GlassTypeDetail({
   imageLeft = false,
 }: GlassTypeDetailProps) {
   const image = (
-    <div className="relative aspect-[4/3] overflow-hidden bg-surface-container">
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        className="object-contain"
-        sizes="(max-width: 1024px) 100vw, 50vw"
-      />
-    </div>
+    <ZoomableImage
+      src={imageSrc}
+      alt={imageAlt}
+      sizes="(max-width: 1024px) 100vw, 50vw"
+    />
   )
 
   const content = (
