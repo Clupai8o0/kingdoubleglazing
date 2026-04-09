@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/data/blog-posts'
+import { suburbs } from '@/data/suburbs'
 
 const BASE_URL = 'https://kingdoubleglazing.com.au'
 
@@ -27,17 +28,8 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${BASE_URL}/contact/`, changeFrequency: 'yearly', priority: 0.6 },
 ]
 
-// Suburb slugs — expand as data files are added
-const suburbSlugs = [
-  'burwood',
-  'camberwell',
-  'glen-waverley',
-  'hawthorn',
-  'box-hill',
-]
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const suburbRoutes: MetadataRoute.Sitemap = suburbSlugs.map((slug) => ({
+  const suburbRoutes: MetadataRoute.Sitemap = suburbs.map(({ slug }) => ({
     url: `${BASE_URL}/areas/${slug}/`,
     changeFrequency: 'monthly',
     priority: 0.7,

@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import Link from 'next/link'
 import { buildMetadata } from '@/lib/seo/generateMetadata'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { EstimateForm } from '@/components/sections/EstimateForm'
+import { GlassPickerGuide } from '@/components/sections/GlassPickerGuide'
 import { FAQ } from '@/components/sections/FAQ'
 import { CtaBanner } from '@/components/sections/CtaBanner'
 import { estimateFaq, estimateProcessSteps } from '@/data/estimate-faq'
@@ -76,8 +78,15 @@ export default function InstantEstimatePage() {
       />
 
       {/* ── Compact hero — tool is the star ── */}
-      <section className="bg-primary-container py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-primary-container py-16 md:py-20 overflow-hidden relative">
+        <span
+          className="pointer-events-none select-none absolute -bottom-4 -right-6 font-display uppercase leading-none text-on-primary-fixed/6"
+          style={{ fontSize: 'clamp(8rem, 22vw, 18rem)' }}
+          aria-hidden="true"
+        >
+          PRICE
+        </span>
+        <div className="relative max-w-7xl mx-auto px-4">
           <div className="flex flex-col gap-5 max-w-3xl">
             {/* Eyebrow badge */}
             <span className="inline-block w-fit bg-on-primary-fixed text-primary-container font-headline text-xs font-semibold uppercase tracking-widest px-3 py-1">
@@ -148,6 +157,9 @@ export default function InstantEstimatePage() {
         cta={{ label: 'Jump to calculator', href: '#calculator' }}
       />
 
+      {/* ── Glass picker guide ── */}
+      <GlassPickerGuide />
+
       {/* ── The calculator ── */}
       <section className="bg-surface py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4">
@@ -166,8 +178,10 @@ export default function InstantEstimatePage() {
             </h2>
           </div>
 
-          {/* EstimateForm (client component) */}
-          <EstimateForm />
+          {/* EstimateForm — wrapped in Suspense because it uses useSearchParams */}
+          <Suspense fallback={<div className="bg-surface-container ghost-border p-12 max-w-3xl mx-auto font-headline text-sm uppercase tracking-widest text-on-surface/40">Loading calculator…</div>}>
+            <EstimateForm />
+          </Suspense>
 
           {/* Reassurance footnote */}
           <p className="mt-8 max-w-3xl mx-auto text-center font-sans text-xs text-on-surface/35 leading-relaxed">

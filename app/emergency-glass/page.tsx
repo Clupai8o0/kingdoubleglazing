@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { buildMetadata } from '@/lib/seo/generateMetadata'
-import { Phone, Zap, ShieldCheck, FileText, MapPin, Crown, Tag } from 'lucide-react'
+import { Phone, Zap, ShieldCheck, FileText, MapPin, Crown, Tag, ArrowRight } from 'lucide-react'
 import { EmergencyHero } from '@/components/sections/EmergencyHero'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
@@ -107,6 +108,26 @@ export default function EmergencyGlassPage() {
         subheading="Fast answers for when you need to act now."
         items={emergencyFaq}
       />
+
+      {/* ── Gallery link ────────────────────────────────────────────── */}
+      <section className="bg-surface-container-lowest py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 ghost-border p-6">
+            <div>
+              <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-1">Our Work</p>
+              <p className="font-display uppercase text-on-surface leading-none" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
+                See It Repaired
+              </p>
+            </div>
+            <Link
+              href="/gallery/?category=repairs"
+              className="shrink-0 inline-flex items-center gap-2 bg-primary-container text-on-primary-fixed font-headline text-xs font-semibold uppercase tracking-[0.15em] px-6 py-3 hover:bg-primary-fixed-dim transition-colors duration-150"
+            >
+              Browse the gallery <ArrowRight size={14} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CtaBanner — call-dominant variant: phone as primary, estimate as secondary */}
       <CtaBanner

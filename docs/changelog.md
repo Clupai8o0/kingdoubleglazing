@@ -4,6 +4,29 @@ Track significant changes, decisions, and milestones. Most recent first.
 
 ---
 
+## 2026-04-10 — SEO content depth
+
+- **Sitemap** (`app/sitemap.ts`): Removed hardcoded 5-suburb slug list; now imports `suburbs` from `data/suburbs.ts` and maps all 30 suburb slugs dynamically — previously 25 suburb pages were invisible to Google
+- **Suburb testimonials** (`data/testimonials.ts`): Added 18 suburb-specific testimonials for all previously uncovered suburbs (Kew, Malvern, Canterbury, Glen Iris, Doncaster, Box Hill, Burwood, Caulfield, Ringwood, Toorak, Templestowe, Mitcham, Nunawading, Vermont, Wantirna, Wheelers Hill, Mont Albert, Balwyn North); suburb page template already filters by name — all 30 suburb pages now display a suburb-specific testimonial
+
+---
+
+## 2026-04-10 — SEO internal linking completed
+
+- **Pillar → cluster links** (`app/double-glazing/page.tsx`): Added "Double Glazing Topics" section after ComparisonTable linking to all 5 cluster pages (soundproof-windows, energy-efficient-windows, heritage-homes, glass-types, cost)
+- **Gallery links from service pages**: Added "See It Installed / Browse the gallery →" strip before CtaBanner on all 6 service pages; category-filtered links for double-glazing (`?category=double-glazing`), shower-screens (`?category=shower-screens`), commercial-glazing (`?category=commercial`), emergency-glass (`?category=repairs`); splashbacks and custom-mirrors link to `/gallery/`
+- **Suburb → areas hub back-link** (`app/areas/[suburb]/page.tsx`): Added prominent "← Browse all Melbourne service areas" link at the bottom of the services section (in addition to existing breadcrumb)
+
+---
+
+## 2026-04-09 — Client content: Glass Picker Guide + Modular Retrofit System sections
+
+- **`GlassPickerGuide` section** (`components/sections/GlassPickerGuide.tsx`): Two-path decision tree (Less Heat vs Less Noise) for the glass-types page. Thermal path recommends Low-E → Tinted Low-E with north-facing note. Acoustic path shows Rw comparison table (Standard Clear 35 dB / Standard Laminated 38 dB / Acoustic PVB Laminated 42 dB) and explains the PVB advantage. Each path ends with a direct CTA to the Instant Estimate form. Added to `/double-glazing/glass-types/` before the FAQ.
+- **`RetrofitSystem` section** (`components/sections/RetrofitSystem.tsx`): Three-feature block covering the modular retrofit glazing system — wide adjustment range, engineered profiles for most aluminium frames, and custom-machined adapters for unique conditions. Includes a "Custom Capability" callout strip with click-to-call CTA. Added to `/double-glazing/` between BenefitsGrid and GlassOptions.
+- Both sections use existing design tokens (`ghost-border`, `primary-container`, `surface-container`, `font-display`, `font-headline`, `rounded-none`).
+
+---
+
 ## 2026-04-09 — SEO critical gaps resolved
 
 - **OG images**: Created `app/opengraph-image.tsx` (root brand OG image via `ImageResponse`) and `app/blog/[slug]/opengraph-image.tsx` (dynamic per-post OG images — imports `blogPosts` directly to avoid edge-runtime `fs` incompatibility)

@@ -31,8 +31,15 @@ export function BlogHero({
   const Heading = asH1 ? 'h1' : 'h2'
 
   return (
-    <section className="bg-primary-container pt-36 pb-16 md:pb-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-primary-container pt-36 pb-16 md:pb-20 overflow-hidden relative">
+      <span
+        className="pointer-events-none select-none absolute -top-8 -right-4 font-display uppercase leading-none text-on-primary-fixed/[0.06]"
+        style={{ fontSize: 'clamp(10rem, 28vw, 22rem)' }}
+        aria-hidden="true"
+      >
+        BLOG
+      </span>
+      <div className="relative max-w-7xl mx-auto px-4">
         <div className="max-w-4xl">
 
           {/* Badge */}

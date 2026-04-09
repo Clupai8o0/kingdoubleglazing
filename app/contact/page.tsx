@@ -103,8 +103,15 @@ export default function ContactPage() {
       />
 
       {/* ── Compact hero ── */}
-      <section className="bg-primary-container py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-primary-container py-16 md:py-20 overflow-hidden relative">
+        <span
+          className="pointer-events-none select-none absolute -bottom-4 -right-6 font-display uppercase leading-none text-on-primary-fixed/[0.06]"
+          style={{ fontSize: 'clamp(8rem, 22vw, 18rem)' }}
+          aria-hidden="true"
+        >
+          CONTACT
+        </span>
+        <div className="relative max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             {/* Left — headline + value prop */}
             <div className="flex flex-col gap-5">

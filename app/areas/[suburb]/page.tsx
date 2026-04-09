@@ -296,6 +296,15 @@ export default async function SuburbPage({
               </li>
             ))}
           </ul>
+
+          <div className="mt-8 pt-6 border-t border-surface-container">
+            <Link
+              href="/areas/"
+              className="inline-flex items-center gap-2 font-headline text-xs font-semibold uppercase tracking-[0.2em] text-on-surface/50 hover:text-primary transition-colors duration-150"
+            >
+              ← Browse all Melbourne service areas
+            </Link>
+          </div>
         </div>
       </section>
 

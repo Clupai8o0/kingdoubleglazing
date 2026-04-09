@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { glassTypes } from '@/data/glass-types'
 import { siteConfig } from '@/data/site'
@@ -35,11 +36,21 @@ function roundTo100(n: number) {
 
 // ── Component ───────────────────────────────────────────────────
 export function EstimateForm() {
+  const searchParams = useSearchParams()
+
   // Step 1 inputs
   const [count,   setCount]   = useState(6)
   const [sizeId,  setSizeId]  = useState<WindowSizeId>('standard')
   const [glassId, setGlassId] = useState<GlassTypeId>('standard-clear')
   const [floorId, setFloorId] = useState<FloorId>('ground')
+
+  // Pre-select glass type when arriving via GlassPickerGuide CTAs (?glass=<id>)
+  useEffect(() => {
+    const g = searchParams.get('glass') as GlassTypeId | null
+    if (g && glassTypes.some(t => t.id === g)) {
+      setGlassId(g)
+    }
+  }, [searchParams])
 
   // View state
   const [step,      setStep]      = useState<1 | 2>(1)
