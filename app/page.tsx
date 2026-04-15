@@ -27,7 +27,7 @@ export default function HomePage() {
     <>
       {/* 1. Hero */}
       <HeroSection
-        badge="Stop. Don't Overpay."
+        badge="10-Year Warranty · Beat Any Quote 30%"
         headlineWhite="Stop Overpaying for"
         headlineYellow="Double Glazing."
         subtext="We upgrade your existing windows with a second layer of glass. Up to 70% quieter. Up to 50% warmer. Half the price of full replacement."
@@ -89,68 +89,6 @@ export default function HomePage() {
   )
 }
 
-// ── Fix section ──────────────────────────────────────────────────────────────
-
-// ── Combined Problem + Fix section ──────────────────────────────────────────
-
-const problemFixRows = [
-  {
-    problem: { label: 'Loud.', detail: 'Traffic, trams, neighbours — standard glass lets it all in.' },
-    fix:     { label: 'Up to 70% quieter.', detail: 'Acoustic laminated glass cuts noise at the source.' },
-  },
-  {
-    problem: { label: 'Cold in winter, hot in summer.', detail: 'Up to 40% of your heating escapes through old windows.' },
-    fix:     { label: 'Up to 50% warmer.', detail: 'Low-E glass keeps heat in winter and blocks it in summer.' },
-  },
-  {
-    problem: { label: 'Expensive to fix.', detail: 'Full window replacement costs $15,000+.' },
-    fix:     { label: `${siteConfig.pricing.retrofitFromDisplay}. Done in a day.`, detail: 'Keep your frames. We replace the glass only.' },
-  },
-]
-
-function ProblemFixSection() {
-  return (
-    <section className="bg-surface py-16 md:py-20">
-      <div className="max-w-5xl mx-auto px-4">
-        {/* column headers — desktop only */}
-        <div className="hidden md:grid md:grid-cols-2 gap-0 mb-6 border-b border-on-surface/10 pb-4">
-          <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-on-surface/80 pl-7">
-            The Problem
-          </p>
-          <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-primary pl-7">
-            The Fix
-          </p>
-        </div>
-
-        <div className="divide-y divide-on-surface/10">
-          {problemFixRows.map(({ problem, fix }, i) => (
-            <div key={i} className="grid grid-cols-1 md:grid-cols-2">
-              {/* Problem */}
-              <div className="p-5 md:p-7 border-r-0 md:border-r border-on-surface/10">
-                <p className="font-headline text-sm md:text-base font-semibold uppercase tracking-wide text-on-surface/70 mb-1">
-                  {problem.label}
-                </p>
-                <p className="font-sans text-xs md:text-sm text-on-surface/60 leading-relaxed hidden md:block">
-                  {problem.detail}
-                </p>
-              </div>
-              {/* Fix */}
-              <div className="px-5 pb-5 pt-0 md:p-7 bg-surface-container-low md:bg-surface">
-                <p className="font-headline text-sm md:text-base font-semibold uppercase tracking-wide text-on-surface mb-1">
-                  {fix.label}
-                </p>
-                <p className="font-sans text-xs md:text-sm text-on-surface/75 leading-relaxed hidden md:block">
-                  {fix.detail}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 // ── Problem/fix anchor strip ─────────────────────────────────────────────────
 
 function ProblemAnchorStrip() {
@@ -203,7 +141,7 @@ function EstimateCTABlock() {
           Start My Free Estimate →
         </Link>
         <p className="mt-4 font-headline text-xs font-semibold uppercase tracking-widest text-on-primary-fixed/50">
-          4 quick questions · Takes 60 seconds · See your range instantly
+          3 quick questions · Takes 60 seconds · See your range instantly
         </p>
       </div>
     </section>

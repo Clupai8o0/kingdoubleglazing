@@ -4,7 +4,7 @@ import {
   Tag,
   TrendingDown,
   ShieldCheck,
-  MapPin,
+  BadgePercent,
   type LucideIcon,
 } from 'lucide-react'
 import { siteConfig } from '@/data/site'
@@ -42,7 +42,7 @@ const defaultItems: BenefitItem[] = [
     text: 'Glass and workmanship guaranteed in writing on every job. No conditions.',
   },
   {
-    icon: MapPin,
+    icon: BadgePercent,
     heading: 'We Beat Any Quote by 30%',
     text: 'Send us a genuine competitor quote. We\'ll come in 30% cheaper — guaranteed in writing.',
   },
