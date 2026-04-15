@@ -1,9 +1,13 @@
 'use client'
 
 import { useState, useActionState } from 'react'
+import Image from 'next/image'
+import { Phone } from 'lucide-react'
+import { siteConfig } from '@/data/site'
 import {
   calculatePartialEstimate,
   GLASS_OPTIONS,
+  GLASS_OVERRIDE_REASON,
   WINDOW_BAND_DISCOUNT,
   WINDOW_BAND_MIDPOINT,
   ORIENTATION_GLASS_MAP,
@@ -199,10 +203,14 @@ export function EstimateCalculator() {
             {calc.orientation && calc.glassType && (
               <div className="mt-6 bg-white/5 px-5 py-4">
                 <p className="font-headline text-xs font-semibold uppercase tracking-[0.15em] text-primary-container mb-1">
-                  Recommended: {GLASS_OPTIONS[ORIENTATION_GLASS_MAP[calc.orientation].recommended].label}
+                  {calc.glassOverridden
+                    ? `Selected: ${GLASS_OPTIONS[calc.glassType].label}`
+                    : `Recommended: ${GLASS_OPTIONS[ORIENTATION_GLASS_MAP[calc.orientation].recommended].label}`}
                 </p>
                 <p className="font-sans text-xs text-inverse-on-surface/60 leading-relaxed mb-4">
-                  {ORIENTATION_GLASS_MAP[calc.orientation].reason}
+                  {calc.glassOverridden
+                    ? GLASS_OVERRIDE_REASON[calc.glassType]
+                    : ORIENTATION_GLASS_MAP[calc.orientation].reason}
                 </p>
                 <p className="font-headline text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-inverse-on-surface/35 mb-2">
                   Change glass type:
@@ -224,6 +232,11 @@ export function EstimateCalculator() {
                     </button>
                   ))}
                 </div>
+                {calc.glassType && (
+                  <p className="font-sans text-xs text-inverse-on-surface/55 mt-3 leading-relaxed">
+                    {GLASS_OPTIONS[calc.glassType].description}
+                  </p>
+                )}
               </div>
             )}
           </StepSection>
@@ -359,6 +372,24 @@ function EstimatePanel({
           </p>
         </div>
 
+        <div className="flex items-center gap-3 mb-5 pb-5 border-b border-white/10">
+          <Image
+            src="/testimonial-founder/founder.webp"
+            alt="Tas Markou — founder, King Double Glazing"
+            width={48}
+            height={48}
+            className="rounded-full object-cover"
+          />
+          <div>
+            <p className="font-headline text-sm font-semibold uppercase tracking-wide text-inverse-on-surface">
+              Tas Markou — Founder
+            </p>
+            <p className="font-sans text-xs text-inverse-on-surface/55">
+              Personally measures every job. 25+ years glazing.
+            </p>
+          </div>
+        </div>
+
         <p className="font-headline text-sm font-semibold uppercase tracking-[0.1em] text-inverse-on-surface mb-5">
           Send this to Tas
         </p>
@@ -390,6 +421,13 @@ function EstimatePanel({
           >
             {quotePending ? 'Sending…' : 'Submit Quote Request →'}
           </button>
+          <a
+            href={siteConfig.phoneHref}
+            className="mt-3 w-full inline-flex items-center justify-center gap-2 border-2 border-primary-container/40 text-primary-container font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-primary-container/10 transition-colors duration-150"
+          >
+            <Phone size={16} aria-hidden="true" />
+            Or Call Tas — {siteConfig.phone}
+          </a>
           <p className="text-center font-sans text-xs text-inverse-on-surface/40">
             Tas will call within 2 hours to confirm.
           </p>
@@ -455,6 +493,13 @@ function EstimatePanel({
           >
             ✓ Send This Quote to Tas
           </button>
+          <a
+            href={siteConfig.phoneHref}
+            className="mt-3 w-full inline-flex items-center justify-center gap-2 border-2 border-primary-container/40 text-primary-container font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-primary-container/10 transition-colors duration-150"
+          >
+            <Phone size={16} aria-hidden="true" />
+            Or Call Tas — {siteConfig.phone}
+          </a>
         </>
       )}
     </div>

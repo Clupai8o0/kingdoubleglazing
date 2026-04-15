@@ -96,6 +96,12 @@ export interface EstimateResult {
   discount:    number
 }
 
+export const GLASS_OVERRIDE_REASON: Record<GlassType, string> = {
+  standard: 'Standard double glazing cuts heat loss and draughts. Solid all-rounder.',
+  lowe:     'Low-E has a coating that blocks heat gain in summer and keeps warmth in during winter.',
+  acoustic: 'Acoustic laminated glass cuts traffic, tram and aircraft noise by up to 65%.',
+}
+
 export function calculateEstimate(inputs: EstimateInputs): EstimateResult {
   const { propertyType, windowBand, glassType, storeys, frameCondition } = inputs
 
