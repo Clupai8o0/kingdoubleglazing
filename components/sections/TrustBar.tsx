@@ -1,15 +1,16 @@
-import { Clock, ShieldCheck, Star, Layers, type LucideIcon } from 'lucide-react'
+import { Award, Clock, ShieldCheck, Star, type LucideIcon } from 'lucide-react'
 
 interface TrustItem {
   icon: LucideIcon
   label: string
 }
 
+// TODO: Confirm Tas is a registered VEU provider before deploying — non-compliant if not accredited
 const defaultItems: TrustItem[] = [
   { icon: Clock,       label: '50+ Years Combined Experience' },
   { icon: Star,        label: 'Beat Any Quote by 30%' },
   { icon: ShieldCheck, label: '10-Year Warranty' },
-  { icon: Layers,      label: 'Fits Most Window Frames' },
+  { icon: Award,       label: 'VEU Rebate Eligible' },
 ]
 
 interface TrustBarProps {

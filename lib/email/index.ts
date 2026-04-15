@@ -7,8 +7,8 @@ function getResend() {
   return new Resend(process.env.RESEND_API_KEY)
 }
 
-// const TAS_EMAIL  = 'tasmarkou1969@gmail.com'
-const TAS_EMAIL  = 'clupaio4@gmail.com' // TEMP — revert to Tas before launch
+import { siteConfig } from '@/data/site'
+const TAS_EMAIL = siteConfig.notificationEmail
 const FROM_EMAIL = 'King Double Glazing <noreply@kingdoubleglazing.com.au>'
 
 export async function sendContactNotification(data: {
