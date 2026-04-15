@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { siteConfig } from '@/data/site'
 
 export const runtime = 'edge'
 
@@ -71,7 +72,7 @@ export default function OGImage() {
           lineHeight: 1.4,
         }}
       >
-        Melbourne's retrofit double glazing specialists. From $595/m² — transparent pricing, no surprises.
+        {`Melbourne's retrofit double glazing specialists. ${siteConfig.pricing.retrofitFromDisplay} — transparent pricing, no surprises.`}
       </p>
 
       {/* Footer row */}
@@ -101,7 +102,7 @@ export default function OGImage() {
             textTransform: 'uppercase',
           }}
         >
-          From $595/m²
+          {siteConfig.pricing.retrofitFromDisplay}
         </span>
       </div>
     </div>,

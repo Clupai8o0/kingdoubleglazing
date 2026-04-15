@@ -36,4 +36,11 @@ export const siteConfig = {
     dark: '/logo-dark.png',
     // icon   = crown mark only — use for favicons, small badges
     icon: '/icon-small.png',
-  },} as const
+  },
+  pricing: {
+    retrofitFromPerSqm: 595,
+    retrofitFromDisplay: 'From $595/m²',
+    replacementFromPerSqm: 1200,
+    replacementFromDisplay: 'From $1,200/m²',
+  },
+} as const

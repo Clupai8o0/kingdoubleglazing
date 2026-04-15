@@ -16,7 +16,7 @@ import { homepageFaq } from '@/data/homepage-faq'
 import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = buildMetadata({
-  title: "Stop Overpaying for Double Glazing Melbourne | From $595/m² | King Double Glazing",
+  title: `Stop Overpaying for Double Glazing Melbourne | ${siteConfig.pricing.retrofitFromDisplay} | King Double Glazing`,
   description:
     "We upgrade your existing windows with a second layer of glass. Up to 70% quieter. Up to 50% warmer. Half the price of full replacement. We beat any genuine quote by 30%.",
   path: '/',
@@ -104,7 +104,7 @@ const problemFixRows = [
   },
   {
     problem: { label: 'Expensive to fix.', detail: 'Full window replacement costs $15,000+.' },
-    fix:     { label: 'From $595/m². Done in a day.', detail: 'Keep your frames. We replace the glass only.' },
+    fix:     { label: `${siteConfig.pricing.retrofitFromDisplay}. Done in a day.`, detail: 'Keep your frames. We replace the glass only.' },
   },
 ]
 

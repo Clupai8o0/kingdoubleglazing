@@ -7,6 +7,7 @@ import {
   MapPin,
   type LucideIcon,
 } from 'lucide-react'
+import { siteConfig } from '@/data/site'
 
 export interface BenefitItem {
   icon: LucideIcon
@@ -27,7 +28,7 @@ const defaultItems: BenefitItem[] = [
   },
   {
     icon: Tag,
-    heading: 'From $595/m²',
+    heading: siteConfig.pricing.retrofitFromDisplay,
     text: 'Half the price of full window replacement. Same noise and warmth results.',
   },
   {

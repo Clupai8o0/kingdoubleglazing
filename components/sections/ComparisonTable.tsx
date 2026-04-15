@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { siteConfig } from '@/data/site'
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -13,8 +14,8 @@ const rows: ComparisonRow[] = [
   {
     feature:        'Upfront cost',
     doNothing:      '$0',
-    retrofit:       'From $595/m²',
-    fullReplacement:'From $1,200/m²',
+    retrofit:       siteConfig.pricing.retrofitFromDisplay,
+    fullReplacement: siteConfig.pricing.replacementFromDisplay,
   },
   {
     feature:        'Noise reduction',

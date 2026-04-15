@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { siteConfig } from '@/data/site'
 
 interface ServiceCard {
   title: string
@@ -14,7 +15,7 @@ interface ServiceCard {
 const defaultServices: ServiceCard[] = [
   {
     title: 'Retrofit\nDouble Glazing',
-    description: 'We add a second layer of glass to the windows you already have. Same frames. Up to 70% quieter. Up to 50% warmer. From $595/m².',
+    description: `We add a second layer of glass to the windows you already have. Same frames. Up to 70% quieter. Up to 50% warmer. ${siteConfig.pricing.retrofitFromDisplay}.`,
     href: '/services/#retrofit',
     image: '/hero/hero-double-glazing.webp',
     imageAlt: 'Retrofit double glazing installation Melbourne',

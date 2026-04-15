@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { EmergencyBanner } from "@/components/layout/EmergencyBanner";
 import { FloatingNav } from "@/components/layout/FloatingNav";
 import { localBusinessSchema } from "@/lib/seo/schema/localBusiness";
+import { siteConfig } from "@/data/site";
 
 const GTM_ID = "GTM-KDRL294K";
 
@@ -39,11 +40,11 @@ export const metadata: Metadata = {
     shortcut: '/icon-small.png',
   },
   title: {
-    default: "King Double Glazing Melbourne | From $595/m² | Stop. Don't Overpay.",
+    default: `King Double Glazing Melbourne | ${siteConfig.pricing.retrofitFromDisplay} | Stop. Don't Overpay.`,
     template: "%s | King Double Glazing",
   },
   description:
-    "Melbourne's retrofit double glazing specialists. Upgrade your existing windows from $595/m². Instant online estimate. Transparent pricing. No surprises.",
+    `Melbourne's retrofit double glazing specialists. Upgrade your existing windows ${siteConfig.pricing.retrofitFromDisplay}. Instant online estimate. Transparent pricing. No surprises.`,
   openGraph: {
     siteName: "King Double Glazing",
     locale: "en_AU",

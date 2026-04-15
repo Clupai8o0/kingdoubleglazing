@@ -11,7 +11,7 @@ import { siteConfig } from '@/data/site'
 export const metadata: Metadata = buildMetadata({
   title: 'Our Services | Retrofit Double Glazing, Shower Screens & More | King Double Glazing',
   description:
-    'Retrofit double glazing, emergency glass repair, shower screens, splashbacks, mirrors, and commercial glazing across Melbourne. From $595/m². 10-year warranty.',
+    `Retrofit double glazing, emergency glass repair, shower screens, splashbacks, mirrors, and commercial glazing across Melbourne. ${siteConfig.pricing.retrofitFromDisplay}. 10-year warranty.`,
   path: '/services/',
 })
 
@@ -113,7 +113,7 @@ export default function ServicesPage() {
           {[
             'Works on timber, aluminium, and steel frames',
             'Installed in one day — most Melbourne homes',
-            'From $595/m² — we beat any genuine quote by 30%',
+            `${siteConfig.pricing.retrofitFromDisplay} — we beat any genuine quote by 30%`,
             '10-year warranty on glass and workmanship',
             'No council approval required in most cases',
           ].map(b => (
