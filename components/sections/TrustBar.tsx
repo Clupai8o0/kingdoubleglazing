@@ -18,10 +18,10 @@ interface TrustBarProps {
 
 export function TrustBar({ items = defaultItems }: TrustBarProps) {
   return (
-    <div className="bg-inverse-surface overflow-x-auto">
-      <ul className="flex items-stretch min-w-max md:min-w-0 md:justify-between max-w-5xl mx-auto divide-x divide-white/10">
+    <div className="bg-inverse-surface">
+      <ul className="flex flex-col md:flex-row md:items-stretch md:justify-between max-w-5xl mx-auto divide-y md:divide-y-0 md:divide-x divide-white/10">
         {items.map(({ icon: Icon, label }) => (
-          <li key={label} className="flex items-center gap-2.5 px-6 py-3.5 shrink-0 md:flex-1 md:justify-center">
+          <li key={label} className="flex items-center gap-2.5 px-6 py-3.5 md:flex-1 md:justify-center">
             <Icon
               size={16}
               strokeWidth={2.5}

@@ -79,8 +79,7 @@ function ProblemAnchorStrip() {
     <div className="bg-black py-8 md:py-10">
       <div className="max-w-175 mx-auto px-4 text-center space-y-3">
         <p className="font-sans text-base md:text-lg text-white/75 leading-snug">
-          If your windows are just one layer of glass, they leak heat, let traffic noise in, and full replacement costs{' '}
-          <span className="text-primary-container font-semibold">$15,000+</span>.
+          If your windows are just one layer of glass, they leak heat, let traffic noise in, and full replacement costs $15,000+.
         </p>
         <p className="font-sans text-base md:text-lg text-white leading-snug">
           We add a second layer of glass to the windows you already have —{' '}

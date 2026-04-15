@@ -165,7 +165,10 @@ export function ComparisonTable({
                     className="text-center px-6 py-4"
                     style={{ backgroundColor: '#F5F5F5', border: '1px solid #E8E8E8' }}
                   >
-                    <span className="font-sans text-base" style={{ color: '#3f3f46' }}>
+                    <span
+                      className={row.feature === 'Upfront cost' ? 'font-display text-2xl leading-none' : 'font-sans text-base'}
+                      style={{ color: '#3f3f46' }}
+                    >
                       {row.doNothing}
                     </span>
                   </td>
@@ -175,9 +178,15 @@ export function ComparisonTable({
                     className="bg-primary-container text-center px-6 py-4"
                     style={{ border: '1px solid #c9a800' }}
                   >
-                    <span className="font-headline text-sm font-bold uppercase tracking-wide text-on-primary-fixed">
-                      {row.retrofit}
-                    </span>
+                    {row.feature === 'Upfront cost' ? (
+                      <span className="font-display text-2xl leading-none uppercase text-on-primary-fixed">
+                        {row.retrofit}
+                      </span>
+                    ) : (
+                      <span className="font-headline text-sm font-bold uppercase tracking-wide text-on-primary-fixed">
+                        {row.retrofit}
+                      </span>
+                    )}
                   </td>
 
                   {/* Full Replacement — white, full contrast */}
@@ -185,9 +194,15 @@ export function ComparisonTable({
                     className="text-center px-6 py-4"
                     style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E5E5' }}
                   >
-                    <span className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface">
-                      {row.fullReplacement}
-                    </span>
+                    {row.feature === 'Upfront cost' ? (
+                      <span className="font-display text-2xl leading-none uppercase text-on-surface">
+                        {row.fullReplacement}
+                      </span>
+                    ) : (
+                      <span className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface">
+                        {row.fullReplacement}
+                      </span>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -216,7 +231,7 @@ export function ComparisonTable({
                   <dt className="font-headline text-xs font-semibold uppercase tracking-wide text-on-primary-fixed/60 shrink-0">
                     {row.feature}
                   </dt>
-                  <dd className="font-headline text-sm font-bold uppercase tracking-wide text-on-primary-fixed text-right">
+                  <dd className={row.feature === 'Upfront cost' ? 'font-display text-2xl leading-none uppercase text-on-primary-fixed text-right' : 'font-headline text-sm font-bold uppercase tracking-wide text-on-primary-fixed text-right'}>
                     {row.retrofit}
                   </dd>
                 </div>
@@ -245,7 +260,7 @@ export function ComparisonTable({
                   <dt className="font-headline text-xs font-semibold uppercase tracking-wide text-on-surface/60 shrink-0">
                     {row.feature}
                   </dt>
-                  <dd className="font-headline text-sm font-semibold uppercase tracking-wide text-on-surface text-right">
+                  <dd className={row.feature === 'Upfront cost' ? 'font-display text-2xl leading-none uppercase text-on-surface text-right' : 'font-headline text-sm font-semibold uppercase tracking-wide text-on-surface text-right'}>
                     {row.fullReplacement}
                   </dd>
                 </div>
