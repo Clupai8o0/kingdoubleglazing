@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { testimonials, type Testimonial } from '@/data/testimonials'
+import { siteConfig } from '@/data/site'
 
 interface TestimonialsProps {
   heading?: string
@@ -38,9 +39,20 @@ export function Testimonials({
           {/* Aggregate badge */}
           <div className="shrink-0 flex flex-col items-start sm:items-end gap-1">
             <Stars count={5} />
-            <p className="font-headline text-xs font-semibold uppercase tracking-[0.15em] text-on-surface/80">
-              5.0 · {items.length} Reviews · Google
-            </p>
+            {siteConfig.social.google ? (
+              <a
+                href={siteConfig.social.google}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-headline text-xs font-semibold uppercase tracking-[0.15em] text-on-surface/80 hover:text-primary underline underline-offset-4"
+              >
+                {siteConfig.reviews.averageRating.toFixed(1)} · {siteConfig.reviews.totalCount} Reviews · Google →
+              </a>
+            ) : (
+              <p className="font-headline text-xs font-semibold uppercase tracking-[0.15em] text-on-surface/80">
+                {siteConfig.reviews.averageRating.toFixed(1)} · {siteConfig.reviews.totalCount} Reviews · Google
+              </p>
+            )}
           </div>
         </div>
 
