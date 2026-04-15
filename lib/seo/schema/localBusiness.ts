@@ -73,5 +73,12 @@ export const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Mirrors' } },
     ],
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: siteConfig.reviews.averageRating.toFixed(1),
+    reviewCount: siteConfig.reviews.totalCount,
+    bestRating: '5',
+    worstRating: '1',
+  },
   sameAs: Object.values(siteConfig.social).filter(Boolean), // TODO: add GBP, Facebook, ProductReview, hipages URLs to siteConfig.social
 }
