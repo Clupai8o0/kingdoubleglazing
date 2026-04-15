@@ -5,15 +5,10 @@ import { buildMetadata } from '@/lib/seo/generateMetadata'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { ComparisonTable } from '@/components/sections/ComparisonTable'
-import { BenefitsGrid } from '@/components/sections/BenefitsGrid'
+import { WhyRetrofit } from '@/components/sections/WhyRetrofit'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
-import { FounderStory } from '@/components/sections/FounderStory'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { FAQ } from '@/components/sections/FAQ'
-import { CtaBanner } from '@/components/sections/CtaBanner'
-import { WhyRetrofit } from '@/components/sections/WhyRetrofit'
-import { GlassComparisonTable } from '@/components/sections/GlassComparisonTable'
-import { ServicesSection } from '@/components/sections/ServicesSection'
 import { homepageFaq } from '@/data/homepage-faq'
 import { siteConfig } from '@/data/site'
 
@@ -43,55 +38,35 @@ export default function HomePage() {
       {/* 2. Trust bar */}
       <TrustBar />
 
-      {/* 3. Problem/fix anchor strip */}
+      {/* 3. Problem framing */}
       <ProblemAnchorStrip />
 
-      {/* 5. Comparison table — the centrepiece */}
+      {/* 4. The proof — comparison table */}
       <ComparisonTable />
 
-      {/* 6. Why us — 6 benefit cards */}
-      <BenefitsGrid />
-
-      {/* 6a. Why retrofit — 6 point form reasons */}
+      {/* 5. Why retrofit — 6 best reasons (merged grid) */}
       <WhyRetrofit />
 
-      {/* 6b. Glass comparison table */}
-      <GlassComparisonTable />
-
-      {/* 6c. All services */}
-      <ServicesSection />
-
-      {/* 7. Instant Estimate CTA block */}
-      <EstimateCTABlock />
-
-      {/* 8. Process — 3 steps */}
+      {/* 6. How it works — 3 steps */}
       <ProcessSteps />
 
-      {/* 9. Founder story strip */}
-      <FounderStory />
+      {/* 7. Big CTA — the 60-second estimate push */}
+      <EstimateCTABlock />
 
-      {/* 10. Testimonials */}
+      {/* 8. Social proof */}
       <Testimonials />
 
-      {/* 11. Upload your quote — secondary conversion */}
-      <UploadQuoteSection />
-
-      {/* 12. FAQ — 5 questions */}
+      {/* 9. FAQ */}
       <FAQ
         heading="Common Questions"
         subheading="Everything Melbourne homeowners ask before booking."
         items={homepageFaq}
       />
 
-      {/* 13. Final CTA block */}
-      <CtaBanner
-        heading={"Ready to Stop\nOverpaying?"}
-        subtext="Get your free estimate in 60 seconds. No email needed to see your number."
-        primaryCta={{ label: 'Start My Free Estimate →', href: '/instant-estimate/' }}
-        secondaryCta={{ label: `Or call Tas: ${siteConfig.phone}`, href: siteConfig.phoneHref }}
-      />
+      {/* 10. What else we do — mini-strip */}
+      <WhatElseStrip />
 
-      {/* 14. Emergency strip */}
+      {/* 11. Emergency strip */}
       <EmergencyStrip />
     </>
   )
@@ -156,43 +131,48 @@ function EstimateCTABlock() {
   )
 }
 
-// ── Upload your quote section ────────────────────────────────────────────────
+// ── What else we do mini-strip ───────────────────────────────────────────────
 
-function UploadQuoteSection() {
+function WhatElseStrip() {
+  const services = [
+    { label: 'Emergency repairs',  href: '/services/#emergency' },
+    { label: 'Shower screens',     href: '/services/#shower-screens' },
+    { label: 'Splashbacks',        href: '/services/#splashbacks' },
+    { label: 'Custom mirrors',     href: '/services/#mirrors' },
+    { label: 'Commercial glazing', href: '/services/#commercial' },
+  ]
+
   return (
-    <section className="bg-inverse-surface py-16 md:py-24">
+    <section className="bg-surface-container-low py-10 md:py-12">
       <div className="max-w-5xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h2
-              className="font-display uppercase leading-[0.88] text-inverse-on-surface mb-6"
-              style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
-            >
-              Already Got a Quote?
-              <br />
-              <span className="text-primary-container">Upload It. We&apos;ll Beat It by 30%.</span>
+            <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">
+              What Else We Do
+            </p>
+            <h2 className="font-headline text-lg md:text-xl font-semibold uppercase tracking-wide text-on-surface">
+              We&apos;re glaziers. We do the lot.
             </h2>
-            <p className="font-sans text-base text-inverse-on-surface/85 leading-relaxed max-w-md mb-8">
-              Send us your competitor&apos;s quote. If it&apos;s genuine, we&apos;ll come in 30% cheaper —
-              guaranteed in writing, with the same 10-year warranty.
-            </p>
           </div>
-          <div className="bg-surface p-8 flex flex-col gap-5">
-            <p className="font-sans text-base text-on-surface/80 leading-relaxed">
-              Send Tas your competitor&apos;s quote on the contact form. If it&apos;s a real quote from a
-              real Melbourne glazier, we&apos;ll come in 30% cheaper — in writing, with the same 10-year warranty.
-            </p>
-            <Link
-              href="/contact/?upload=1"
-              className="w-full inline-flex items-center justify-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-5 hover:bg-primary-fixed-dim transition-colors duration-150"
-            >
-              Send My Quote →
-            </Link>
-            <p className="font-sans text-xs text-on-surface/75 text-center">
-              One business day. No call centres. No high-pressure sales.
-            </p>
-          </div>
+          <Link
+            href="/services/"
+            className="inline-flex items-center gap-2 font-headline text-sm font-semibold uppercase tracking-[0.12em] text-on-surface hover:text-primary-container transition-colors duration-150"
+          >
+            See all services →
+          </Link>
         </div>
+        <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+          {services.map(({ label, href }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className="font-sans text-base text-on-surface/80 hover:text-primary underline underline-offset-4 decoration-on-surface/20 hover:decoration-primary"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
