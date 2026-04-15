@@ -12,6 +12,7 @@ import { Testimonials } from '@/components/sections/Testimonials'
 import { FAQ } from '@/components/sections/FAQ'
 import { CtaBanner } from '@/components/sections/CtaBanner'
 import { WhyRetrofit } from '@/components/sections/WhyRetrofit'
+import { GlassComparisonTable } from '@/components/sections/GlassComparisonTable'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { homepageFaq } from '@/data/homepage-faq'
 import { siteConfig } from '@/data/site'
@@ -54,7 +55,10 @@ export default function HomePage() {
       {/* 6a. Why retrofit — 6 point form reasons */}
       <WhyRetrofit />
 
-      {/* 6b. All services */}
+      {/* 6b. Glass comparison table */}
+      <GlassComparisonTable />
+
+      {/* 6c. All services */}
       <ServicesSection />
 
       {/* 7. Instant Estimate CTA block */}
