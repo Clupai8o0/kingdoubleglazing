@@ -267,31 +267,39 @@ export default function ServicesPage() {
       </ServiceSection>
 
       {/* ── #commercial ── */}
-      <section id="commercial" className="bg-surface-container-low py-12 md:py-16">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="border-l-4 border-primary-container pl-8 max-w-2xl">
-            <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">
-              Commercial
-            </p>
-            <h2
-              className="font-display uppercase leading-none text-on-surface mb-4"
-              style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
-            >
-              Commercial Glazing
-            </h2>
-            <p className="font-sans text-base text-on-surface/70 leading-relaxed mb-6">
-              We do commercial retrofit double glazing, shopfront glass, office partitions,
-              and strata glazing across Melbourne. Contact us to discuss your project.
-            </p>
-            <Link
-              href="/contact/"
-              className="inline-flex items-center gap-2 font-headline text-sm font-semibold uppercase tracking-widest text-on-surface/70 hover:text-on-surface transition-colors duration-150"
-            >
-              Contact Us →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ServiceSection
+        id="commercial"
+        eyebrow="Commercial"
+        heading="Commercial Glazing"
+        dark
+        image="/hero/hero-commercial-glazing.webp"
+        imageAlt="Commercial glazing — shopfront and office glass Melbourne"
+      >
+        <p className="font-sans text-base text-inverse-on-surface/85 leading-relaxed mb-6">
+          Offices, retail, shopfronts, strata — we handle commercial glazing jobs of all sizes
+          across Melbourne. Same transparent pricing, same 10-year warranty.
+        </p>
+        <ul className="space-y-3 mb-8">
+          {[
+            'Retrofit double glazing for offices and apartments',
+            'Shopfront glass supply and installation',
+            'Office partitions and internal glazing',
+            'Strata and body corporate work',
+            'All project sizes — call to discuss yours',
+          ].map(b => (
+            <li key={b} className="flex items-start gap-3 font-sans text-base text-inverse-on-surface/85">
+              <span className="text-primary-container font-bold mt-0.5 shrink-0">✓</span>
+              {b}
+            </li>
+          ))}
+        </ul>
+        <Link
+          href="/contact/"
+          className="inline-flex items-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-primary-fixed-dim transition-colors duration-150"
+        >
+          Get a Quote →
+        </Link>
+      </ServiceSection>
 
       <FAQ
         heading="Service Questions"
