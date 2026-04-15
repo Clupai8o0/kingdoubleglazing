@@ -27,8 +27,8 @@ export async function submitContactForm(
   if (honeypot) return { status: 'success' }
 
   try {
-    // TODO: replace with real mailer / CRM integration
-    // e.g. await sendEmail({ to: siteConfig.email, name, email, phone, service, message })
+    // v1: form submission is intentionally stubbed. Backend wiring (Neon insert + Resend send)
+    // is deferred to a future task. Do not change without client approval.
     await new Promise<void>(r => setTimeout(r, 400)) // simulated async
 
     console.info('[contact-form] submission', { name, email: email || '—', phone: phone || '—', service, messageLength: message.length })

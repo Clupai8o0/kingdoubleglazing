@@ -231,33 +231,20 @@ function UploadQuoteSection() {
               guaranteed in writing, with the same 10-year warranty.
             </p>
           </div>
-          <div className="bg-surface p-8">
-            <form className="flex flex-col gap-5" action="/contact/" method="GET">
-              <input
-                type="text"
-                placeholder="Your name"
-                className="bg-surface-container-high px-4 py-3 font-sans text-base text-on-surface placeholder:text-on-surface/55 focus-visible:outline-2 focus-visible:outline-primary-container focus-visible:outline-offset-2"
-              />
-              <input
-                type="tel"
-                placeholder="Phone number"
-                className="bg-surface-container-high px-4 py-3 font-sans text-base text-on-surface placeholder:text-on-surface/55 focus-visible:outline-2 focus-visible:outline-primary-container focus-visible:outline-offset-2"
-              />
-              <input
-                type="email"
-                placeholder="Email address"
-                className="bg-surface-container-high px-4 py-3 font-sans text-base text-on-surface placeholder:text-on-surface/55 focus-visible:outline-2 focus-visible:outline-primary-container focus-visible:outline-offset-2"
-              />
-              <p className="font-sans text-xs text-on-surface/80 -mt-2">
-                Upload your quote via the contact form — we&apos;ll respond within one business day.
-              </p>
-              <Link
-                href="/contact/"
-                className="w-full inline-flex items-center justify-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-5 hover:bg-primary-fixed-dim transition-colors duration-150"
-              >
-                Send My Quote — Get My 30% Beat →
-              </Link>
-            </form>
+          <div className="bg-surface p-8 flex flex-col gap-5">
+            <p className="font-sans text-base text-on-surface/80 leading-relaxed">
+              Send Tas your competitor&apos;s quote on the contact form. If it&apos;s a real quote from a
+              real Melbourne glazier, we&apos;ll come in 30% cheaper — in writing, with the same 10-year warranty.
+            </p>
+            <Link
+              href="/contact/?upload=1"
+              className="w-full inline-flex items-center justify-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-5 hover:bg-primary-fixed-dim transition-colors duration-150"
+            >
+              Send My Quote →
+            </Link>
+            <p className="font-sans text-xs text-on-surface/75 text-center">
+              One business day. No call centres. No high-pressure sales.
+            </p>
           </div>
         </div>
       </div>

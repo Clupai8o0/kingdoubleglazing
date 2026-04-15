@@ -25,7 +25,13 @@ const schema = {
   description: 'Contact page for King Double Glazing — free quotes and enquiries for retrofit double glazing in Melbourne.',
 }
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const params = await searchParams
+  const isUploadFlow = params.upload === '1'
   return (
     <>
       <script
@@ -112,6 +118,13 @@ export default function ContactPage() {
       {/* Contact form */}
       <section className="bg-surface-container-low py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4">
+          {isUploadFlow && (
+            <div className="mb-8 max-w-2xl bg-primary-container/20 border-l-4 border-primary-container px-5 py-4">
+              <p className="font-sans text-base text-on-surface leading-relaxed">
+                <strong>Sending us a competitor quote?</strong> Mention it in the message field and attach a photo or PDF — we&apos;ll beat it by 30% in writing.
+              </p>
+            </div>
+          )}
           <div className="mb-10 md:mb-14 max-w-xl">
             <p className="font-headline text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-3">
               Enquiry Form

@@ -55,7 +55,8 @@ export function EstimateForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setSubmitting(true)
-    // Wire to /api/estimate-lead in production
+    // v1: form submission is intentionally stubbed. Backend wiring (Neon insert + Resend send)
+    // is deferred to a future task. Do not change without client approval.
     await new Promise<void>(r => setTimeout(r, 600))
     setSubmitting(false)
     setSubmitted(true)
