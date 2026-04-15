@@ -156,9 +156,9 @@ function WhatElseStrip() {
           </div>
           <Link
             href="/services/"
-            className="inline-flex items-center gap-2 font-headline text-sm font-semibold uppercase tracking-[0.12em] text-on-surface hover:text-primary-container transition-colors duration-150"
+            className="inline-flex items-center gap-2 bg-on-surface text-surface font-headline text-sm font-semibold uppercase tracking-[0.12em] px-6 py-3 hover:bg-primary-container hover:text-on-primary-fixed transition-colors duration-150 shrink-0"
           >
-            See all services →
+            See All Services →
           </Link>
         </div>
         <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">

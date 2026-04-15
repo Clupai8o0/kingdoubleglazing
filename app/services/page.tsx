@@ -61,7 +61,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-[#111318]">
         <Image
-          src="/hero/hero-double-glazing.webp"
+          src="/hero/hero-services.webp"
           alt="Double glazing services Melbourne"
           fill
           priority
