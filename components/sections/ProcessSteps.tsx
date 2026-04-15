@@ -90,7 +90,7 @@ export function ProcessSteps({
                   <h3 className="font-headline text-lg font-semibold uppercase tracking-wide text-inverse-on-surface leading-snug mb-3">
                     {step.title}
                   </h3>
-                  <p className="font-sans text-sm text-inverse-on-surface/55 leading-relaxed">
+                  <p className="font-sans text-base text-inverse-on-surface/75 leading-relaxed">
                     {step.body}
                   </p>
                   <div className="mt-5 h-0.5 w-8 bg-primary-container" aria-hidden="true" />

@@ -125,7 +125,7 @@ export function BenefitsGrid({
                     {itemHeading}
                   </h3>
                   {/* body text hidden on mobile to save space */}
-                  <p className="hidden sm:block font-sans text-sm text-on-surface/75 leading-relaxed relative z-10">
+                  <p className="hidden sm:block font-sans text-base text-on-surface/75 leading-relaxed relative z-10">
                     {text}
                   </p>
                 </div>

@@ -39,7 +39,7 @@ export function CtaBanner({
                 <span key={i} className="block">{line}</span>
               ))}
             </h2>
-            <p className="font-sans text-sm text-on-primary-fixed/60 mt-5 max-w-md leading-relaxed mx-auto">
+            <p className="font-sans text-base text-on-primary-fixed/80 mt-5 max-w-md leading-relaxed mx-auto">
               {subtext}
             </p>
           </div>

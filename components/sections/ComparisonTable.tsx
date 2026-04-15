@@ -165,7 +165,7 @@ export function ComparisonTable({
                     className="text-center px-6 py-4"
                     style={{ backgroundColor: '#F5F5F5', border: '1px solid #E8E8E8' }}
                   >
-                    <span className="font-sans text-sm" style={{ color: '#555' }}>
+                    <span className="font-sans text-base" style={{ color: '#555' }}>
                       {row.doNothing}
                     </span>
                   </td>
@@ -264,7 +264,7 @@ export function ComparisonTable({
                   <dt className="font-headline text-xs font-semibold uppercase tracking-wide shrink-0" style={{ color: '#555' }}>
                     {row.feature}
                   </dt>
-                  <dd className="font-sans text-sm text-right" style={{ color: '#555' }}>
+                  <dd className="font-sans text-base text-right" style={{ color: '#555' }}>
                     {row.doNothing}
                   </dd>
                 </div>
@@ -274,7 +274,7 @@ export function ComparisonTable({
         </div>
 
         {/* Secondary service note */}
-        <p className="mt-8 text-center font-sans text-sm text-on-surface/55 italic">
+        <p className="mt-8 text-center font-sans text-base text-on-surface/75 italic">
           We do both. Most Melbourne homes are perfect for retrofit, but if you&apos;re building new or your frames need replacing, we&apos;ll quote that too.
         </p>
 

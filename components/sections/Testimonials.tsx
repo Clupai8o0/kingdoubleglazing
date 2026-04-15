@@ -30,7 +30,7 @@ export function Testimonials({
                 <span key={i} className="block">{line}</span>
               ))}
             </h2>
-            <p className="font-sans text-sm text-on-surface/70 mt-4">
+            <p className="font-sans text-base text-on-surface/70 mt-4">
               {subheading}
             </p>
           </div>
@@ -127,7 +127,7 @@ function TestimonialCard({
       </span>
 
       {/* Review text */}
-      <p className="font-sans text-sm text-on-surface/70 leading-relaxed flex-1 mb-6">
+      <p className="font-sans text-base text-on-surface/70 leading-relaxed flex-1 mb-6">
         {t.text}
       </p>
 

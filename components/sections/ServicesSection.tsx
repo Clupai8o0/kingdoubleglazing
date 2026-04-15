@@ -87,7 +87,7 @@ export function ServicesSection({
                     <span key={j} className="block">{line}</span>
                   ))}
                 </h3>
-                <p className="font-sans text-sm text-inverse-on-surface/80 leading-relaxed flex-1 mb-8">
+                <p className="font-sans text-base text-inverse-on-surface/80 leading-relaxed flex-1 mb-8">
                   {description}
                 </p>
                 <ArrowRight
