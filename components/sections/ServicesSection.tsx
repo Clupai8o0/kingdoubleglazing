@@ -98,6 +98,15 @@ export function ServicesSection({
             </Link>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/services/"
+            className="inline-flex items-center gap-3 bg-inverse-surface text-inverse-on-surface font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-inverse-surface/80 transition-colors duration-150"
+          >
+            View All Services →
+          </Link>
+        </div>
       </div>
     </section>
   )

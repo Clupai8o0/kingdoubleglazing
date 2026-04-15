@@ -11,6 +11,7 @@ import { FounderStory } from '@/components/sections/FounderStory'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { FAQ } from '@/components/sections/FAQ'
 import { CtaBanner } from '@/components/sections/CtaBanner'
+import { ServicesSection } from '@/components/sections/ServicesSection'
 import { homepageFaq } from '@/data/homepage-faq'
 import { siteConfig } from '@/data/site'
 
@@ -48,6 +49,9 @@ export default function HomePage() {
 
       {/* 6. Why us — 6 benefit cards */}
       <BenefitsGrid />
+
+      {/* 6b. All services */}
+      <ServicesSection />
 
       {/* 7. Instant Estimate CTA block */}
       <EstimateCTABlock />
@@ -271,13 +275,21 @@ function EmergencyStrip() {
           <strong className="text-white">Broken window right now?</strong>{' '}
           We do emergency glass repair across Melbourne.
         </p>
-        <a
-          href={siteConfig.phoneHref}
-          className="inline-flex items-center gap-2 font-headline text-sm font-semibold uppercase tracking-wide text-white hover:text-white/80 transition-colors duration-150"
-        >
-          <Phone size={15} aria-hidden="true" />
-          Call {siteConfig.phone}
-        </a>
+        <div className="flex items-center gap-6 flex-wrap">
+          <Link
+            href="/services/#emergency"
+            className="font-headline text-sm font-semibold uppercase tracking-wide text-white/70 hover:text-white transition-colors duration-150 underline underline-offset-4"
+          >
+            See emergency services →
+          </Link>
+          <a
+            href={siteConfig.phoneHref}
+            className="inline-flex items-center gap-2 font-headline text-sm font-semibold uppercase tracking-wide text-white hover:text-white/80 transition-colors duration-150"
+          >
+            <Phone size={15} aria-hidden="true" />
+            Call {siteConfig.phone}
+          </a>
+        </div>
       </div>
     </section>
   )
