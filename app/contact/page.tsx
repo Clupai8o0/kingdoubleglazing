@@ -76,7 +76,7 @@ export default async function ContactPage({
                 <span className="text-primary-container">No Pressure.</span>
               </h1>
               <p className="font-sans text-base text-white/85 max-w-md leading-relaxed">
-                Price yourself online first. Call us when you&apos;d like to proceed — not before.
+                Price yourself online first. Call us when you&apos;d like to proceed.
               </p>
             </div>
 

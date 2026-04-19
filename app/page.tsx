@@ -42,7 +42,7 @@ export default function HomePage() {
         headlineYellow="Without Replacing Your Windows."
         subtext="We add a second layer of glass to the windows you already have — no ripping them out, no scaffolding, no mess. Your home gets up to 70% quieter and up to 70% less heat loss, at half the cost of full window replacement. It works on timber, aluminium, and steel frames."
         adaptorCaption="Over 100 adapters to suit most window types. We turn any window into a double glazed window."
-        filterMessage="Price yourself online first. Call us when you'd like to proceed — not before."
+        filterMessage="Price yourself online first. Call us when you'd like to proceed."
         primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
         secondaryCta={{ label: `Or call ${siteConfig.phone}`, href: siteConfig.phoneHref }}
         imageSrc="/hero/hero-double-glazing.webp"

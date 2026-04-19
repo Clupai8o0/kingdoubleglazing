@@ -106,7 +106,7 @@ export default function InstantEstimatePage() {
               <span className="text-primary-container">See Your Price in 60 Seconds.</span>
             </h1>
             <p className="font-sans text-sm font-medium text-white/90 border-l-2 border-primary-container pl-3 max-w-xl leading-snug">
-              Price yourself online first. Call us when you&apos;d like to proceed — not before.
+              Price yourself online first. Call us when you&apos;d like to proceed.
             </p>
             <p className="font-sans text-lg md:text-xl text-white/90 max-w-xl leading-relaxed">
               We&apos;ll beat any genuine quote by 30%. That&apos;s a promise in writing.
