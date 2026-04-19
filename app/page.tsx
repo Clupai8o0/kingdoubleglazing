@@ -13,20 +13,21 @@ import { Testimonials } from '@/components/sections/Testimonials'
 import { FAQ } from '@/components/sections/FAQ'
 import { PaymentTerms } from '@/components/PaymentTerms'
 import { AdaptorDisclosure } from '@/components/AdaptorDisclosure'
+import { FreeAdviceBlock } from '@/components/FreeAdviceBlock'
 import { homepageFaq } from '@/data/homepage-faq'
 import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = buildMetadata({
   title: `Stop Overpaying for Double Glazing Melbourne | ${siteConfig.pricing.retrofitFromDisplay} | King Double Glazing`,
   description:
-    "We upgrade your existing windows with a second layer of glass. Up to 70% quieter. Up to 50% warmer. Half the price of full replacement. We beat any genuine quote by 30%.",
+    "We upgrade your existing windows with a second layer of glass. Up to 70% quieter. Up to 70% less heat loss. Half the price of full replacement. We beat any genuine quote by 30%.",
   path: '/',
 })
 
 const homePageSchema = buildWebPageSchema({
   url: `${BASE_URL}/`,
   name: `Stop Overpaying for Double Glazing Melbourne | ${siteConfig.pricing.retrofitFromDisplay} | King Double Glazing`,
-  description: 'We upgrade your existing windows with a second layer of glass. Up to 70% quieter. Up to 50% warmer. Half the price of full replacement. We beat any genuine quote by 30%.',
+  description: 'We upgrade your existing windows with a second layer of glass. Up to 70% quieter. Up to 70% less heat loss. Half the price of full replacement. We beat any genuine quote by 30%.',
   breadcrumb: [{ name: 'Home', url: `${BASE_URL}/` }],
 })
 
@@ -39,9 +40,10 @@ export default function HomePage() {
         badge="Stop. Don't Overpay. · 10-Year Warranty · Beat Any Quote 30%"
         headlineWhite="Quieter Home. Lower Bills."
         headlineYellow="Without Replacing Your Windows."
-        subtext="We add a second layer of glass to the windows you already have — no ripping them out, no scaffolding, no mess. Your home gets up to 70% quieter and up to 50% warmer, at half the cost of full window replacement. It works on timber, aluminium, and steel frames."
+        subtext="We add a second layer of glass to the windows you already have — no ripping them out, no scaffolding, no mess. Your home gets up to 70% quieter and up to 70% less heat loss, at half the cost of full window replacement. It works on timber, aluminium, and steel frames."
+        adaptorCaption="Over 100 adapters to suit most window types. We turn any window into a double glazed window."
         filterMessage="Price yourself online first. Call us when you'd like to proceed — not before."
-        primaryCta={{ label: 'Get My Instant Price →', href: '/instant-estimate/' }}
+        primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
         secondaryCta={{ label: `Or call ${siteConfig.phone}`, href: siteConfig.phoneHref }}
         imageSrc="/hero/hero-double-glazing.webp"
         imageAlt="Double glazing upgrade on an existing window in a Melbourne home"
@@ -82,6 +84,9 @@ export default function HomePage() {
         items={homepageFaq}
       />
 
+      {/* Free advice block */}
+      <FreeAdviceBlock />
+
       {/* 10. What else we do — mini-strip */}
       <WhatElseStrip />
 
@@ -110,7 +115,7 @@ function ProblemAnchorStrip() {
         <p className="font-sans text-lg md:text-xl text-on-surface leading-relaxed">
           We add a second layer of glass to the windows you already have —{' '}
           up to <span className="text-primary font-semibold">70% quieter</span>,{' '}
-          up to <span className="text-primary font-semibold">50% warmer</span>,{' '}
+          up to <span className="text-primary font-semibold">70% less heat loss</span>,{' '}
           a fraction of the price.
         </p>
       </div>
@@ -135,9 +140,9 @@ function EstimateCTABlock() {
           className="font-display uppercase leading-[0.88] text-on-primary-fixed mb-4"
           style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
         >
-          Get Your Price in 60 Seconds.
+          Generate Your Own Quote.
           <br />
-          <span className="text-on-primary-fixed/60">No Email Needed to See Your Number.</span>
+          <span className="text-on-primary-fixed/60">See Your Price in 60 Seconds.</span>
         </h2>
         <p className="font-sans text-base text-on-primary-fixed/70 mb-8 max-w-lg mx-auto leading-relaxed">
           We&apos;ll beat any genuine quote by 30%. That&apos;s a promise in writing.
@@ -146,10 +151,10 @@ function EstimateCTABlock() {
           href="/instant-estimate/"
           className="inline-flex items-center gap-3 bg-on-primary-fixed text-primary-container font-headline text-sm font-semibold uppercase tracking-[0.12em] px-10 py-5 hover:bg-on-primary-fixed/80 transition-colors duration-150"
         >
-          Start My Free Estimate →
+          Start My Quote →
         </Link>
         <p className="mt-4 font-headline text-xs font-semibold uppercase tracking-widest text-on-primary-fixed/50">
-          3 quick questions · Takes 60 seconds · See your range instantly
+          Enter your window sizes · See your price instantly
         </p>
       </div>
     </section>

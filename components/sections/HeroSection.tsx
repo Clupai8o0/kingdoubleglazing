@@ -9,6 +9,7 @@ interface HeroSectionProps {
   headlineWhite: string
   headlineYellow: string
   subtext: string
+  adaptorCaption?: string
   filterMessage?: string
   primaryCta: { label: string; href: string }
   secondaryCta?: { label: string; href: string }
@@ -23,6 +24,7 @@ export function HeroSection({
   headlineWhite,
   headlineYellow,
   subtext,
+  adaptorCaption,
   filterMessage,
   primaryCta,
   secondaryCta,
@@ -82,6 +84,15 @@ export function HeroSection({
         <p className="font-sans text-lg md:text-xl text-white/90 mb-6 max-w-2xl leading-relaxed">
           {subtext}
         </p>
+
+        {/* Adaptor caption — prominent, between subtext and CTAs */}
+        {adaptorCaption && (
+          <div className="border-l-4 border-primary-container pl-4 mb-6 max-w-xl">
+            <p className="font-sans font-bold text-white leading-snug" style={{ fontSize: 'clamp(1.1rem,2.5vw,1.4rem)' }}>
+              {adaptorCaption}
+            </p>
+          </div>
+        )}
 
         {/* Filter message — anti-time-waster callout */}
         {filterMessage && (
