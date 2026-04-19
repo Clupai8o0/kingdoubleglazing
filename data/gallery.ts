@@ -48,12 +48,6 @@ export const galleryItems = [
     caption: 'Office Partitions',
   },
   {
-    src: '/gallery/Semi-frameless-shower-screen-b.webp',
-    alt: 'Semi-frameless shower screen installation Melbourne',
-    category: 'shower-screens',
-    caption: 'Semi-Frameless Shower Screen',
-  },
-  {
     src: '/gallery/glass-repairs-cropped.webp',
     alt: 'Emergency glass repair Melbourne',
     category: 'repairs',
@@ -71,10 +65,9 @@ export type GalleryItem = (typeof galleryItems)[number]
 export type GalleryCategory = GalleryItem['category']
 
 export const galleryCategories = [
-  { id: 'all',           label: 'All Work' },
-  { id: 'retrofit',      label: 'Retrofit Glazing' },
-  { id: 'shopfronts',    label: 'Shopfronts' },
-  { id: 'commercial',    label: 'Commercial' },
-  { id: 'shower-screens', label: 'Shower Screens' },
-  { id: 'repairs',       label: 'Repairs' },
+  { id: 'all',        label: 'All Work' },
+  { id: 'retrofit',   label: 'Retrofit Glazing' },
+  { id: 'shopfronts', label: 'Shopfronts' },
+  { id: 'commercial', label: 'Commercial' },
+  { id: 'repairs',    label: 'Repairs' },
 ] as const
