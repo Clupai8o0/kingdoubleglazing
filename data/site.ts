@@ -46,7 +46,5 @@ export const siteConfig = {
   pricing: {
     retrofitFromPerSqm: 595,
     retrofitFromDisplay: 'From $595/m²',
-    replacementFromPerSqm: 1200,
-    replacementFromDisplay: 'From $1,200/m²',
   },
 } as const

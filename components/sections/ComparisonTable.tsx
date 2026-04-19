@@ -15,7 +15,7 @@ const rows: ComparisonRow[] = [
     feature:        'Upfront cost',
     doNothing:      '$0',
     retrofit:       siteConfig.pricing.retrofitFromDisplay,
-    fullReplacement: siteConfig.pricing.replacementFromDisplay,
+    fullReplacement: 'From $1,200/m²',
   },
   {
     feature:        'Noise reduction',
@@ -26,8 +26,8 @@ const rows: ComparisonRow[] = [
   {
     feature:        'Winter warmth',
     doNothing:      'None',
-    retrofit:       'Up to 50% warmer',
-    fullReplacement:'Up to 50% warmer',
+    retrofit:       'Up to 70% less heat loss',
+    fullReplacement:'Up to 70% less heat loss',
   },
   {
     feature:        'Time to install',
@@ -288,9 +288,9 @@ export function ComparisonTable({
           </div>
         </div>
 
-        {/* Secondary service note */}
+        {/* Note */}
         <p className="mt-8 text-center font-sans text-base text-on-surface/75 italic">
-          We do both. Most Melbourne homes are perfect for retrofit, but if you&apos;re building new or your frames need replacing, we&apos;ll quote that too.
+          Retrofit is what King Double Glazing does. If your frames need replacing, that&apos;s a job for a different trade — we&apos;ll tell you honestly at the free home visit.
         </p>
 
         {/* CTA */}
@@ -299,7 +299,7 @@ export function ComparisonTable({
             href="/instant-estimate/"
             className="inline-flex items-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-primary-fixed-dim transition-colors duration-150"
           >
-            Get My Instant Price — See What Your Home Would Cost →
+            Generate My Quote — See What Your Home Would Cost →
           </Link>
         </div>
 

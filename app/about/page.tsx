@@ -8,6 +8,7 @@ import { SchemaScript } from '@/components/SchemaScript'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { CtaBanner } from '@/components/sections/CtaBanner'
+import { FreeAdviceBlock } from '@/components/FreeAdviceBlock'
 import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = buildMetadata({
@@ -67,16 +68,16 @@ export default function AboutPage() {
                 <span className="text-primary-container">of Melbourne Glaziers</span>
               </h1>
               <p className="font-sans text-base text-inverse-on-surface/85 max-w-lg leading-relaxed mb-8">
-                Tas Markou learned the trade from his father, a well-respected Melbourne glazier.
-                He completed his apprenticeship at Melbourne Shop Fitters and built a commercial
-                glazing operation with 40+ staff at peak.
+                Tas Markou ran two double glazing factories. He found a way to drop the price —
+                because most companies charge more than most Melbourne households can afford.
+                40+ staff at peak. 25+ years in the trade.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/instant-estimate/"
                   className="inline-flex items-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-primary-fixed-dim transition-colors duration-150"
                 >
-                  Get My Instant Price →
+                  Generate My Quote →
                 </Link>
                 <a
                   href={siteConfig.phoneHref}
@@ -121,24 +122,24 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-5 font-sans text-base text-on-surface/70 leading-relaxed max-w-xl">
                 <p>
-                  Tas Markou grew up around glass. His father was a well-respected Melbourne glazier,
-                  and Tas was doing his first glass replacements as a kid.
-                  After completing his apprenticeship at Melbourne Shop Fitters, he went on to build
-                  a commercial glazing operation with 40+ staff at its peak.
+                  I grew up in glass. My father was a glazier and I was doing installs as a kid.
+                  I ran two factories in double glazing. Along the way I found a way to drop the price,
+                  because most companies are way too expensive to suit most household budgets.
                 </p>
                 <p>
-                  When he saw the demand for energy-efficient glass — and realised most homeowners
-                  were being priced out of full replacements — he pivoted to retrofit double glazing.
-                  Upgrading the windows people already had, for a fraction of the price.
+                  Most Melbourne homeowners want quieter, warmer windows. They don't want to spend $15,000
+                  ripping out frames that work fine. We add a second layer of glass to the windows you
+                  already have. No replacement. No mess. One day, done.
                 </p>
                 <p>
-                  That&apos;s why our whole business is built around one idea:{' '}
+                  That's why every quote from us is in plain numbers. No hidden extras. No markup.
+                  If I can't beat any real competitor quote by 30%, I'll tell you straight.{' '}
                   <strong className="text-on-surface">Stop. Don&apos;t overpay.</strong>
                 </p>
                 <blockquote className="border-l-4 border-primary-container pl-5 not-italic">
                   <p className="font-sans text-base font-semibold text-on-surface leading-relaxed">
                     Transparent quoting. Fair pricing. 10-year warranty.
-                    No overpaying. That&apos;s the King promise.
+                    That&apos;s the King promise. — Tas
                   </p>
                 </blockquote>
               </div>
@@ -255,10 +256,12 @@ export default function AboutPage() {
 
       <Testimonials />
 
+      <FreeAdviceBlock />
+
       <CtaBanner
         heading={"Ready to\nGet Started?"}
-        subtext="Get your instant estimate in 60 seconds. Or call Tas directly — no call centres, no middlemen."
-        primaryCta={{ label: 'Get My Instant Price →', href: '/instant-estimate/' }}
+        subtext="Generate your own quote in 60 seconds. Or call Tas directly — no call centres, no middlemen."
+        primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
         secondaryCta={{ label: siteConfig.phone, href: siteConfig.phoneHref }}
       />
     </>
