@@ -89,7 +89,7 @@ export default function GalleryPage() {
               href="/instant-estimate/"
               className="inline-flex items-center gap-2 bg-primary-container text-on-primary-fixed font-headline text-sm font-bold uppercase tracking-wider px-8 py-4 hover:bg-primary-container/90 transition-colors duration-150"
             >
-              Get My Instant Price →
+              Generate My Quote →
             </Link>
           </div>
         </div>

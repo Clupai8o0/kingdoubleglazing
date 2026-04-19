@@ -201,7 +201,7 @@ export default function WarrantyPage() {
             href="/instant-estimate/"
             className="inline-flex items-center gap-3 bg-on-primary-fixed text-primary-container font-headline text-sm font-semibold uppercase tracking-[0.12em] px-10 py-5 hover:bg-on-primary-fixed/80 transition-colors duration-150"
           >
-            Get My Instant Price →
+            Generate My Quote →
           </Link>
         </div>
       </section>

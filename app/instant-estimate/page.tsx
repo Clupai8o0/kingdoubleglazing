@@ -12,6 +12,7 @@ import { siteConfig } from '@/data/site'
 import Image from 'next/image'
 import { Eye, ShieldCheck, PhoneOff, Clock, Calculator } from 'lucide-react'
 import { GlassComparisonTable } from '@/components/sections/GlassComparisonTable'
+import { FreeAdviceBlock } from '@/components/FreeAdviceBlock'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Instant Double Glazing Estimate Melbourne | See Your Price First',
@@ -94,17 +95,16 @@ export default function InstantEstimatePage() {
         <div className="relative z-10 flex flex-col justify-end flex-1 max-w-5xl mx-auto w-full px-4 pb-14 md:pb-18 pt-30">
           <div className="flex flex-col gap-5 max-w-3xl">
             <span className="inline-block w-fit bg-primary-container text-on-primary-fixed font-headline text-xs font-semibold uppercase tracking-widest px-3 py-1">
-              Instant Estimate Tool
+              Quote Generator
             </span>
             <h1
               className="font-display uppercase leading-none text-white"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}
             >
-              Get Your Price in 60 Seconds.
+              Generate Your Own Quote.
               <br />
-              <span className="text-primary-container">No Email Needed.</span>
+              <span className="text-primary-container">See Your Price in 60 Seconds.</span>
             </h1>
-            {/* B3: Anti-time-waster subtitle */}
             <p className="font-sans text-sm font-medium text-white/90 border-l-2 border-primary-container pl-3 max-w-xl leading-snug">
               Price yourself online first. Call us when you&apos;d like to proceed — not before.
             </p>
@@ -113,10 +113,10 @@ export default function InstantEstimatePage() {
             </p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2 mt-1">
               {[
-                '4 quick questions',
-                'Takes 60 seconds',
-                'See your range instantly',
+                'Enter your window sizes',
+                'See your price instantly',
                 'No email needed',
+                '10-year warranty',
               ].map(item => (
                 <li key={item} className="font-headline text-xs font-semibold uppercase tracking-widest text-white/80">
                   ✓ {item}
@@ -128,7 +128,7 @@ export default function InstantEstimatePage() {
                 href="#estimate-form"
                 className="inline-flex items-center gap-3 bg-primary-container text-on-primary-fixed font-headline text-sm font-semibold uppercase tracking-[0.12em] px-8 py-4 hover:bg-primary-fixed-dim transition-colors duration-150 w-fit"
               >
-                Start My Free Estimate →
+                Generate My Quote →
               </a>
             </div>
           </div>
@@ -158,12 +158,25 @@ export default function InstantEstimatePage() {
       {/* D2.2: Adaptor disclosure in FAQ area */}
       <AdaptorDisclosure />
 
+      {/* Commercial note */}
+      <div className="max-w-4xl mx-auto px-6 md:px-10 py-4">
+        <p className="font-sans text-sm text-on-surface/55 leading-relaxed">
+          <strong className="text-on-surface/70">Commercial glazing?</strong>{' '}
+          The calculator is built for homes. For offices, retail, and commercial jobs, call Tas directly on{' '}
+          <a href="tel:+61406470595" className="underline hover:text-on-surface/80 transition-colors duration-150">
+            0406 470 595
+          </a>.
+        </p>
+      </div>
+
       <FAQ
-        heading="Estimate FAQ"
+        heading="Quote Generator FAQ"
         subheading="Common questions about the tool and how it works."
         items={estimateFaq}
         emitSchema={false}
       />
+
+      <FreeAdviceBlock />
 
       <CtaBanner
         heading={"Ready for the\nFormal Quote?"}

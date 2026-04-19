@@ -18,7 +18,7 @@ export function EmergencyBanner() {
           href="/instant-estimate/"
           className="font-headline inline-flex items-center gap-1.5 bg-on-primary-fixed text-primary-container font-bold px-4 py-1.5 uppercase tracking-wide text-xs hover:bg-on-primary-fixed/80 transition-colors duration-150 shrink-0"
         >
-          Get My Instant Price →
+          Generate My Quote →
         </Link>
       </div>
     </div>

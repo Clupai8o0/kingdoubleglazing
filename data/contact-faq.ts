@@ -5,7 +5,7 @@ export const contactFaq = [
   },
   {
     q: 'Do I need a site visit to get a price?',
-    a: 'No. Use the Instant Estimate Tool to get a ballpark in 60 seconds — no email required to see your number. A free home visit confirms the exact price before any work begins.',
+    a: 'No. Use the Quote Generator to get your price in 60 seconds — no email required to see your number. A free home visit confirms the exact price before any work begins.',
   },
   {
     q: 'What areas do you service?',
