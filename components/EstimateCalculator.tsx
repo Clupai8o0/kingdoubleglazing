@@ -141,7 +141,7 @@ export function EstimateCalculator() {
         </div>
 
         <p className="font-sans text-sm text-inverse-on-surface mb-5 max-w-md leading-relaxed">
-          If this is within your budget, send your quote through — Tas will call to confirm and book the install.
+          If this quote suits your budget we look forward to hearing from you 😊
         </p>
 
         {quoteState.status === 'error' && (
@@ -345,7 +345,7 @@ export function EstimateCalculator() {
 
               <div className="mt-5 bg-primary-container text-on-primary-fixed px-5 py-3">
                 <p className="font-sans text-sm font-medium leading-snug">
-                  If this is within your budget, send your quote through — Tas will call to confirm and book the install.
+                  If this quote suits your budget we look forward to hearing from you 😊
                 </p>
               </div>
 
