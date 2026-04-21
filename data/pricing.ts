@@ -62,7 +62,7 @@ export const OPTIONS = {
     spec: '4mm tinted Low-E + 10mm spacer + 6mm acoustic PVB',
     pricePerSqm: 795,
     heatPct: 70,
-    noisePct: 65,
+    noisePct: 70,
     tech: {
       composition: ['4mm tinted Low-E glass', '10mm air spacer', '6mm laminated with acoustic PVB interlayer'],
       spacerMm: 10,
