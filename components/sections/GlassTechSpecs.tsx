@@ -11,7 +11,7 @@ const NO = (
 
 export function GlassTechSpecs() {
   return (
-    <section className="bg-surface-container-low py-14 md:py-18">
+    <section id="tech-specs" className="bg-surface-container-low py-14 md:py-18">
       <div className="max-w-5xl mx-auto px-4">
 
         <div className="mb-8">
@@ -34,7 +34,7 @@ export function GlassTechSpecs() {
           {OPTION_KEYS.map(key => {
             const opt = OPTIONS[key]
             return (
-              <div key={key} className="bg-surface ghost-border p-5">
+              <div key={key} id={`tech-specs-${key.toLowerCase()}`} className="bg-surface ghost-border p-5">
                 <div className="flex items-baseline gap-3 mb-4">
                   <span
                     className="font-display uppercase leading-none text-primary"
@@ -77,7 +77,7 @@ export function GlassTechSpecs() {
               <tr>
                 <th className="text-left px-5 py-3 bg-surface-container font-headline text-xs uppercase tracking-wide text-on-surface" />
                 {OPTION_KEYS.map(key => (
-                  <th key={key} className="px-5 py-3 bg-surface-container text-center font-display uppercase text-on-surface" style={{ fontSize: '1.5rem' }}>
+                  <th key={key} id={`tech-specs-${key.toLowerCase()}`} className="px-5 py-3 bg-surface-container text-center font-display uppercase text-on-surface" style={{ fontSize: '1.5rem' }}>
                     {key}
                     <span className="block font-headline text-[0.6rem] font-semibold normal-case tracking-wide mt-0.5 text-primary">
                       {OPTIONS[key].sublabel}

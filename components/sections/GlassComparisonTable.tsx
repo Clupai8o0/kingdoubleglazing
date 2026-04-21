@@ -43,10 +43,7 @@ function parseRow(r: RowDraft): WindowRow | null {
 export function GlassComparisonTable() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const [revealed, setRevealed] = useState<Record<OptionKey, boolean>>({
-    A: false, B: false, C: false, D: false,
-  })
-  const [selectedOption, setSelectedOption] = useState<OptionKey | null>(null)
+const [selectedOption, setSelectedOption] = useState<OptionKey | null>(null)
   const [rows, setRows] = useState<RowDraft[]>([{ ...BLANK_ROW }])
   const [dialogOpen, setDialogOpen] = useState(false)
   const [quoteState, quoteAction, quotePending] = useActionState(
@@ -76,11 +73,7 @@ export function GlassComparisonTable() {
     }
   }
 
-  function toggle(key: OptionKey) {
-    setRevealed(prev => ({ ...prev, [key]: !prev[key] }))
-  }
-
-  function updateRow(i: number, field: keyof RowDraft, value: string | boolean) {
+function updateRow(i: number, field: keyof RowDraft, value: string | boolean) {
     setRows(prev => {
       const next = [...prev]
       next[i] = { ...next[i], [field]: value }
@@ -134,7 +127,6 @@ export function GlassComparisonTable() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {OPTION_KEYS.map(key => {
             const opt = OPTIONS[key]
-            const isRevealed = revealed[key]
             const isTop = key === 'D'
             const isSelected = selectedOption === key
 
@@ -243,10 +235,10 @@ export function GlassComparisonTable() {
                   {isSelected ? '✓ Selected' : 'Get my price →'}
                 </p>
 
-                {/* Spec toggle */}
-                <button
-                  type="button"
-                  onClick={e => { e.stopPropagation(); toggle(key) }}
+                {/* Spec link */}
+                <a
+                  href={`#tech-specs-${key.toLowerCase()}`}
+                  onClick={e => e.stopPropagation()}
                   className={[
                     'mt-2 text-left font-sans text-xs underline underline-offset-2 transition-colors duration-150',
                     isSelected
@@ -256,24 +248,8 @@ export function GlassComparisonTable() {
                       : 'text-on-surface/70 hover:text-on-surface/70',
                   ].join(' ')}
                 >
-                  {isRevealed ? 'Hide spec ↑' : "What's this made of? ↓"}
-                </button>
-
-                {isRevealed && (
-                  <p
-                    className={[
-                      'mt-2 font-sans text-[0.65rem] leading-snug',
-                      isSelected
-                        ? 'text-on-surface/70'
-                        : isTop
-                        ? 'text-inverse-on-surface/80'
-                        : 'text-on-surface',
-                    ].join(' ')}
-                    onClick={e => e.stopPropagation()}
-                  >
-                    {opt.spec}
-                  </p>
-                )}
+                  What&apos;s this made of? ↓
+                </a>
               </div>
             )
           })}
