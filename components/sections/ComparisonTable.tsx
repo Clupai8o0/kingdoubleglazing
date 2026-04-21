@@ -11,17 +11,17 @@ interface ComparisonRow {
 const rows: ComparisonRow[] = [
   {
     feature:   'Noise reduction',
-    doNothing: 'None',
+    doNothing: '0%',
     retrofit:  'Up to 70% quieter',
   },
   {
     feature:   'Winter warmth',
-    doNothing: 'None',
+    doNothing: '0%',
     retrofit:  'Up to 70% less heat loss',
   },
   {
     feature:   'Disruption',
-    doNothing: 'None',
+    doNothing: '0%',
     retrofit:  'Minimal',
   },
   {
@@ -31,7 +31,7 @@ const rows: ComparisonRow[] = [
   },
   {
     feature:   'Energy bill savings',
-    doNothing: 'None',
+    doNothing: '0%',
     retrofit:  'Up to 40% less heating',
   },
 ]
