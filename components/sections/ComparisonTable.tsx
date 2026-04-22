@@ -17,17 +17,7 @@ const rows: ComparisonRow[] = [
   {
     feature:   'Winter warmth',
     doNothing: '0%',
-    retrofit:  'Up to 70% less heat loss',
-  },
-  {
-    feature:   'Disruption',
-    doNothing: '0%',
-    retrofit:  'Minimal',
-  },
-  {
-    feature:   'Keep existing frames?',
-    doNothing: 'Yes',
-    retrofit:  'Yes — no replacement needed',
+    retrofit:  'Up to 70% warmer',
   },
   {
     feature:   'Energy bill savings',
@@ -43,7 +33,7 @@ interface ComparisonTableProps {
 }
 
 export function ComparisonTable({
-  heading = "Upgrade Your Windows or Live With It — Here's the Difference",
+  heading = "Upgrade Your Windows",
 }: ComparisonTableProps) {
   return (
     <section className="bg-surface-container-low py-16 md:py-24">
@@ -52,11 +42,14 @@ export function ComparisonTable({
         {/* Heading */}
         <div className="mb-10 md:mb-14">
           <h2
-            className="font-display uppercase leading-[0.88] text-on-surface"
+            className="font-display uppercase leading-[0.88] text-on-surface mb-4"
             style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
           >
             {heading}
           </h2>
+          <p className="font-sans text-base md:text-lg text-on-surface/70 max-w-2xl leading-relaxed">
+            We remove your single standard glazing with our adaptor and double glaze it.
+          </p>
         </div>
 
         {/* ── Desktop table ─────────────────────────────────────────────────── */}
@@ -69,7 +62,7 @@ export function ComparisonTable({
                   className="bg-surface-container-low text-left px-6 py-4 border border-surface-container-high"
                 />
 
-                {/* Do Nothing */}
+                {/* Standard single glass */}
                 <th
                   scope="col"
                   className="text-center px-6 py-5 min-w-[150px]"
@@ -79,7 +72,7 @@ export function ComparisonTable({
                     className="font-display uppercase text-on-surface leading-none block"
                     style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.8rem)' }}
                   >
-                    Do Nothing
+                    Standard single glass
                   </span>
                 </th>
 
@@ -96,7 +89,7 @@ export function ComparisonTable({
                     className="font-display uppercase text-on-primary-fixed leading-none block"
                     style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.9rem)' }}
                   >
-                    Retrofit With Us
+                    Double Glazing
                   </span>
                   <span className="block font-sans text-[17px] normal-case font-normal text-on-primary-fixed mt-1">
                     Add a second glass layer
@@ -144,7 +137,7 @@ export function ComparisonTable({
           <div className="grid grid-cols-2">
             <div className="p-3 border-b border-r border-surface-container-high" style={{ backgroundColor: '#F5F5F5' }}>
               <p className="font-headline text-[15px] font-semibold uppercase tracking-wide" style={{ color: '#555' }}>
-                Do Nothing
+                Standard single glass
               </p>
             </div>
             <div className="bg-primary-container p-3 border-b" style={{ borderBottomColor: '#c9a800' }}>
@@ -152,7 +145,7 @@ export function ComparisonTable({
                 What we do
               </p>
               <p className="font-headline text-[15px] font-semibold uppercase tracking-wide text-on-primary-fixed mt-1">
-                Retrofit With Us
+                Double Glazing
               </p>
             </div>
           </div>

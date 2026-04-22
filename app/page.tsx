@@ -41,7 +41,7 @@ export default function HomePage() {
         headlineWhite="Quieter Home. Lower Bills."
         headlineYellow="Without Replacing Your Windows."
         subtext="We add a second pane to your existing windows. No ripping out, no mess. Up to 70% quieter."
-        adaptorCaption="Over 100 adapters to suit most window types. We turn any window into a double glazed window."
+        adaptorCaption="Our standard adapters are engineered to suit a wide range of window configurations."
 primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
         secondaryCta={{ label: `Or call ${siteConfig.phone}`, href: siteConfig.phoneHref }}
         imageSrc="/hero/hero-double-glazing.webp"
@@ -52,14 +52,11 @@ primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
       {/* 2. Trust bar */}
       <TrustBar />
 
-      {/* 3. Problem framing */}
-      <ProblemAnchorStrip />
-
-      {/* 4. The proof — comparison table */}
-      <ComparisonTable />
-
-      {/* 5. Why retrofit — 6 best reasons (merged grid) */}
+      {/* 3. Stop Don't Overpay */}
       <WhyRetrofit />
+
+      {/* 4. Comparison table */}
+      <ComparisonTable />
 
       {/* D2.1: Adaptor disclosure — after WhyRetrofit */}
       <AdaptorDisclosure />
@@ -92,32 +89,6 @@ primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
       {/* 11. Emergency strip */}
       <EmergencyStrip />
     </>
-  )
-}
-
-// ── Problem/fix anchor strip ─────────────────────────────────────────────────
-
-function ProblemAnchorStrip() {
-  return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="max-w-2xl mx-auto px-4 text-center">
-        <span
-          className="font-display leading-none text-primary block mb-2"
-          style={{ fontSize: 'clamp(4rem, 8vw, 6rem)' }}
-          aria-hidden="true"
-        >
-          &ldquo;
-        </span>
-        <p className="font-sans text-lg md:text-xl text-on-surface leading-relaxed mb-5">
-          Single glazed windows let in noise and cold.
-        </p>
-        <p className="font-sans text-lg md:text-xl text-on-surface leading-relaxed">
-          We add a second pane to your existing windows —{' '}
-          up to <span className="text-primary font-semibold">70% quieter</span> and{' '}
-          up to <span className="text-primary font-semibold">70% less heat loss</span>.
-        </p>
-      </div>
-    </section>
   )
 }
 
