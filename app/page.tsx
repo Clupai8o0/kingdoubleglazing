@@ -6,7 +6,6 @@ import { buildWebPageSchema } from '@/lib/seo/schema/webpage'
 import { SchemaScript } from '@/components/SchemaScript'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { TrustBar } from '@/components/sections/TrustBar'
-import { ComparisonTable } from '@/components/sections/ComparisonTable'
 import { WhyRetrofit } from '@/components/sections/WhyRetrofit'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
 import { Testimonials } from '@/components/sections/Testimonials'
@@ -54,9 +53,6 @@ primaryCta={{ label: 'Generate My Quote →', href: '/instant-estimate/' }}
 
       {/* 3. Stop Don't Overpay */}
       <WhyRetrofit />
-
-      {/* 4. Comparison table */}
-      <ComparisonTable />
 
       {/* D2.1: Adaptor disclosure — after WhyRetrofit */}
       <AdaptorDisclosure />
