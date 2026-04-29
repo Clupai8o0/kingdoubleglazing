@@ -68,13 +68,6 @@ export function buildLocalBusinessSchema(settings: SiteSettings) {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Mirrors' } },
       ],
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: settings.reviews.averageRating.toFixed(1),
-      reviewCount: settings.reviews.totalCount,
-      bestRating: '5',
-      worstRating: '1',
-    },
     sameAs: Object.values(settings.social).filter(Boolean),
   }
 }

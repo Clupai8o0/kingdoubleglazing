@@ -1,6 +1,5 @@
 import { siteSettingsSchema } from './siteSettings'
 import { navigationSchema } from './navigation'
-import { testimonialSchema } from './testimonial'
 import { galleryItemSchema } from './galleryItem'
 import { pricingOptionSchema } from './pricingOption'
 import { processStepSchema } from './processStep'
@@ -15,7 +14,6 @@ import { estimatePageSchema } from './estimatePage'
 export const schemas = [
   siteSettingsSchema,
   navigationSchema,
-  testimonialSchema,
   galleryItemSchema,
   pricingOptionSchema,
   processStepSchema,

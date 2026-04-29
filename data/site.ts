@@ -30,10 +30,6 @@ export const siteConfig = {
     instagram: '',
     google: '', // GBP URL once live, e.g. 'https://g.page/r/...'
   },
-  reviews: {
-    totalCount: 36,
-    averageRating: 5.0,
-  },
   notificationEmail: 'tasmarkou1969@gmail.com',
   logos: {
     // light  = dark text/gold crown — use on light/white backgrounds (Header)

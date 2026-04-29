@@ -6,12 +6,11 @@ import { buildWebPageSchema } from '@/lib/seo/schema/webpage'
 import { buildFaqSchema } from '@/lib/seo/schema/faqPage'
 import { SchemaScript } from '@/components/SchemaScript'
 import { TrustBar } from '@/components/sections/TrustBar'
-import { Testimonials } from '@/components/sections/Testimonials'
 import { CtaBanner } from '@/components/sections/CtaBanner'
 import { FreeAdviceBlock } from '@/components/FreeAdviceBlock'
 import { sanityFetch } from '@/sanity/lib/fetch'
-import { SITE_SETTINGS_QUERY, TESTIMONIALS_QUERY, FAQS_QUERY } from '@/sanity/lib/queries'
-import type { SiteSettings, Testimonial, FaqItem } from '@/sanity/types'
+import { SITE_SETTINGS_QUERY, FAQS_QUERY } from '@/sanity/lib/queries'
+import type { SiteSettings, FaqItem } from '@/sanity/types'
 
 export const metadata: Metadata = buildMetadata({
   title: "About King Double Glazing | Melbourne's Anti-Ripoff Glaziers | Tas Markou",
@@ -21,9 +20,8 @@ export const metadata: Metadata = buildMetadata({
 })
 
 export default async function AboutPage() {
-  const [settings, testimonials, generalFaqs] = await Promise.all([
+  const [settings, generalFaqs] = await Promise.all([
     sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY, tags: ['siteSettings'] }),
-    sanityFetch<Testimonial[]>({ query: TESTIMONIALS_QUERY, tags: ['testimonial'] }),
     sanityFetch<FaqItem[]>({ query: FAQS_QUERY, params: { group: 'general' }, tags: ['faqItem'] }),
   ])
 
@@ -253,12 +251,6 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
-
-      <Testimonials
-        items={testimonials}
-        reviews={settings.reviews}
-        googleProfileUrl={settings.social.google}
-      />
 
       <FreeAdviceBlock />
 

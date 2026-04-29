@@ -19,7 +19,6 @@ export interface SiteSettings {
   }
   geo: { latitude: number; longitude: number }
   social: { facebook: string; instagram: string; google: string }
-  reviews: { totalCount: number; averageRating: number }
   logos: { light: string; dark: string; icon: string }
   pricing: { retrofitFromPerSqm: number; retrofitFromDisplay: string }
 }
@@ -29,17 +28,6 @@ export interface Navigation {
   ctaNav: { label: string; href: string }
   footerServicesNav: Array<{ label: string; href: string }>
   footerCompanyNav: Array<{ label: string; href: string }>
-}
-
-export interface Testimonial {
-  _id: string
-  name: string
-  suburb: string
-  source: string
-  rating: number
-  tag: string
-  text: string
-  customerImage?: string
 }
 
 export interface GalleryItem {

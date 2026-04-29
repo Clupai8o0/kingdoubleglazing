@@ -48,15 +48,6 @@ export const siteSettingsSchema = defineType({
       ],
     }),
     defineField({
-      name: 'reviews',
-      title: 'Review Aggregation',
-      type: 'object',
-      fields: [
-        defineField({ name: 'totalCount', type: 'number', title: 'Total Review Count' }),
-        defineField({ name: 'averageRating', type: 'number', title: 'Average Rating (e.g. 5.0)' }),
-      ],
-    }),
-    defineField({
       name: 'logos',
       title: 'Logo Paths',
       type: 'object',

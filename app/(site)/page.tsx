@@ -8,7 +8,6 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { TrustBar } from '@/components/sections/TrustBar'
 import { WhyRetrofit } from '@/components/sections/WhyRetrofit'
 import { ProcessSteps } from '@/components/sections/ProcessSteps'
-import { Testimonials } from '@/components/sections/Testimonials'
 import { FAQ } from '@/components/sections/FAQ'
 import { PaymentTerms } from '@/components/PaymentTerms'
 import { AdaptorDisclosure } from '@/components/AdaptorDisclosure'
@@ -17,10 +16,9 @@ import { sanityFetch } from '@/sanity/lib/fetch'
 import {
   SITE_SETTINGS_QUERY,
   PROCESS_STEPS_QUERY,
-  TESTIMONIALS_QUERY,
   FAQS_QUERY,
 } from '@/sanity/lib/queries'
-import type { SiteSettings, ProcessStep, Testimonial, FaqItem } from '@/sanity/types'
+import type { SiteSettings, ProcessStep, FaqItem } from '@/sanity/types'
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY, tags: ['siteSettings'] })
@@ -33,10 +31,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [settings, steps, testimonials, faqs] = await Promise.all([
+  const [settings, steps, faqs] = await Promise.all([
     sanityFetch<SiteSettings>({ query: SITE_SETTINGS_QUERY, tags: ['siteSettings'] }),
     sanityFetch<ProcessStep[]>({ query: PROCESS_STEPS_QUERY, tags: ['processStep'] }),
-    sanityFetch<Testimonial[]>({ query: TESTIMONIALS_QUERY, tags: ['testimonial'] }),
     sanityFetch<FaqItem[]>({ query: FAQS_QUERY, params: { group: 'homepage' }, tags: ['faqItem'] }),
   ])
 
@@ -81,13 +78,6 @@ export default async function HomePage() {
 
       {/* 7. Big CTA — the minute estimate push */}
       <EstimateCTABlock />
-
-      {/* 8. Social proof */}
-      <Testimonials
-        items={testimonials}
-        reviews={settings.reviews}
-        googleProfileUrl={settings.social.google}
-      />
 
       {/* 9. FAQ */}
       <FAQ

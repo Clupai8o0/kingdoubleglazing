@@ -4,11 +4,6 @@ export const SITE_SETTINGS_QUERY = groq`*[_type == "siteSettings"][0]`
 
 export const NAVIGATION_QUERY = groq`*[_type == "navigation"][0]`
 
-export const TESTIMONIALS_QUERY = groq`*[_type == "testimonial"] | order(_createdAt asc) {
-  _id, name, suburb, source, rating, tag, text,
-  "customerImage": customerImage.asset->url
-}`
-
 export const GALLERY_QUERY = groq`*[_type == "galleryItem"] | order(order asc) {
   _id, alt, category, caption, order,
   "imageUrl": image.asset->url,
